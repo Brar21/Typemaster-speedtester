@@ -1,0 +1,93 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  /* min-height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.headDiv{
+  padding: 3rem;
+}
+.footer{
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  margin:  auto;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer select{
+  border: none;
+}
+.footer select:hover{
+  text-decoration: underline;
+}
+.footer select option{
+  margin: 10px;
+  font-size: larger;
+  padding: 10px;
+  background-color: yellow;
+}
+.footer h3{
+  padding: 5px 10px;
+  background-color: seagreen;
+  color: white;
+  border-radius: 5px;
+}
+
+.footer p:hover{
+  text-decoration: underline;
+}
+.footer strong{
+  padding: 5px 10px;
+  border: 1px solid seagreen;
+  border-radius: 5px;
+  color: seagreen;
+}
+.headDiv{
+  width: 100%;
+  margin: auto;
+}
+.pageLink{
+  color: blue;
+  text-align: start;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  margin-left: -70%;
+  padding-top: 10px;
+}
+.pageLink:hover {
+ text-decoration: underline;
+}

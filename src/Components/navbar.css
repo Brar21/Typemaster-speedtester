@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.nav{
+    width: 80%;
+    margin: auto;
+    padding-left: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: darkslategray;
+    height: 5rem;
+    border-radius: 10px;
+    color: white;
+ 
+}
+
+   .secondpart {
+    width: 15%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+   }
+   .nav a{
+    text-decoration: none;
+    color: white;
+   }
+   .nav a:hover{
+    position: sticky;
+    background-color: rgb(19, 145, 145);
+    padding: 5px 14px;
+    border-radius: 50px;
+   }
+   .signupButton{
+    background-color: rgb(19, 145, 145);
+    padding: 4px 8px;
+    color: black;
+    border-radius: 4px;
+   }
+ button{
+    margin-left: -100px;
+ }
