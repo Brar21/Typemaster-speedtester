@@ -11,12 +11,12 @@ Typing Master to check real time typing speed and accuracy's during typing parag
 
 ## TECHS 
 
--React.js
--Chakra-UI
--React-icons
--HTML
--Javascript
--CSS
--Chakra-UI-icons
+- React.js
+- Chakra-UI
+- React-icons
+- HTML
+- Javascript
+- CSS
+- Chakra-UI-icons
 
 
