@@ -2,12 +2,12 @@
 
 Typing Master to check real time typing speed and accuracy's during typing paragraphs. Also providing ranking according to typing speed.
 
-##Pages
+## Pages
 - Login and Sign-up Pages
 - Home Page
-- Typing Learn
-- Typing Test
-- 
+- Typing Teacher
+- Test Speed
+- Learning Tool
 
 ## TECHS 
 
@@ -19,4 +19,16 @@ Typing Master to check real time typing speed and accuracy's during typing parag
 - CSS
 - Chakra-UI-icons
 
+## Features 
+- User Authentication with
+     - Facebook
+     - Google
+- Word/per Minute Count
+- Accuracy Checking
+- Learnig Tool
+
+## Home page
+<img src="https://github.com/Brar21/Typemaster-speedtester/blob/master/src/images/Homepage.jpg?raw=true" alt="homepage" />
+<img src="https://github.com/Brar21/Typemaster-speedtester/blob/master/src/images/Loginpage.jpg?raw=true" alt="login" />
+<img src="https://github.com/Brar21/Typemaster-speedtester/blob/master/src/images/signuppage.jpg?raw=true" alt="sign-up" />
 
