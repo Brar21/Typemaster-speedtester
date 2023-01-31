@@ -4,7 +4,7 @@ on:
   push: 
     branches: ["main"]
     # allow us to run workFlow from Ui
-  
+  workflow_dispatch:  
 
 permissions:
   contents: read
