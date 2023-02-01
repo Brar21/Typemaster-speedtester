@@ -9,7 +9,7 @@ function Home() {
 
     return <Box bg='#f3f3f3'>
     <Box bg = '#577b87' h = '60vh' >
-        <Box  w='80%' m='auto'  display='flex' justifyContent='space-evenly' >
+        <Box  w='80%' m='auto'  display={{sm:'grid',md:'grid',lg:'flex'}}justifyContent='space-evenly' >
             <Box>
                 <Image src='https://ichef.bbci.co.uk/images/ic/1280xn/p0252jmf.jpg' alt='Home_page' w='20rem' h='10rem' mt='2rem'></Image>
             </Box>
