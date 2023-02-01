@@ -1,18 +1,19 @@
+import {Box,Text} from "@chakra-ui/react";
 import "../App.css"
 
 function Footer() {
      
     return (
-        <div className="headDiv" >
+        <Box display={'flex'} flexWrap='wrap'>
     <hr color="green" />
-        <div className="footer" >
+        <Box className="footer" >
             <h3>For Devlopers</h3>
-            <p>About</p>
-            <p>High Scores</p>
-            <p>FAQ</p>
-            <p>Contact Us</p>
+            <Text>About</Text>
+            <Text>High Scores</Text>
+            <Text>FAQ</Text>
+            <Text>Contact Us</Text>
             <strong>Donate</strong>
-            <p>Privacy & Terms</p>
+            <Text>Privacy & Terms</Text>
             {/* For select diffrent languages we  make select tag here */}
 
             <select name="Language" id="language">
@@ -30,9 +31,9 @@ function Footer() {
                 </option>
             </select>
 {/* Now time to style this Footer */}
-            </div>
+            </Box>
 
-        </div>
+        </Box>
     )
 }
 export default Footer;

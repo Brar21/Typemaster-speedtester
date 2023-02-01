@@ -47,7 +47,7 @@ function Home() {
                 <Image src='https://www.tckpublishing.com/wp-content/uploads/2015/02/keyboard-finger-placement.jpg'  h='15rem' margin='1.5rem'></Image>
                 <Box m='3rem'>
                     <Heading textAlign='start' mb='1rem'>Learn Typing</Heading>
-                    <Text textAlign='start' mb='1rem'>Speed up your learning progress with TypeMaster Free Exercises and develop valuable keyboarding skills!</Text>
+                    <Text textAlign='start' color={'black'} mb='1rem'>Speed up your learning progress with TypeMaster Free Exercises and develop valuable keyboarding skills!</Text>
                     <Link to="/typingteacher" className='pageLink'>Learn Typing Free </Link>
                 </Box>
             </Box>
@@ -55,7 +55,7 @@ function Home() {
                 <Image src='https://www.pngtosvg.com/gallery/wp-content/uploads/2020/12/1949685070.png'w='15rem' h='15rem' mt='1.5rem' ml='10rem' mr='10rem'></Image>
                 <Box w='40.5%'m='3rem'>
                     <Heading textAlign='start' mb='1rem'>Typing Test</Heading>
-                    <Text textAlign='start' mb='1rem'>Take an online typing test to find out your typing speed and impress friends or employers with your personal typing skills.</Text>
+                    <Text textAlign='start' color={'black'} mb='1rem'>Take an online typing test to find out your typing speed and impress friends or employers with your personal typing skills.</Text>
                     <Link to="/testspeed" className='pageLink'>Take Typing Test Free </Link>
                 </Box>
             </Box>
