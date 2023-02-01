@@ -14,7 +14,7 @@ function Home() {
                 <Image src='https://ichef.bbci.co.uk/images/ic/1280xn/p0252jmf.jpg' alt='Home_page' w='20rem' h='10rem' mt='2rem'></Image>
             </Box>
             <Box display='flex' flexDirection='column'>
-                <Heading color='white' textAlign='start' mb='1rem' mt='2rem'>Type Fater</Heading>
+                <Heading color='white' textAlign='start' mb='1rem' mt='2rem'>Type Faster</Heading>
                 <Text mb='1rem' textAlign='start' color='white'>Check your typing speed online. Grow your typing ablity with our free lessons</Text>
                     <Box display='flex'> <FaRegKeyboard fontSize='20px' color='white' /> <Select placeholder='Select option' w='100px' bg="transparent" border='none' mb="10px" color='white' textDecoration='underline'>
                         <option value='english'>Enlgish</option>
