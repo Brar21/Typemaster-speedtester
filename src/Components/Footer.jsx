@@ -4,7 +4,7 @@ import "../App.css"
 function Footer() {
      
     return (
-        <Box display={'flex'} flexWrap='wrap'>
+        <Box display={{lg:'flex',md:"grid"}} flexWrap='wrap'>
     <hr color="green" />
         <Box className="footer" >
             <h3>For Devlopers</h3>
