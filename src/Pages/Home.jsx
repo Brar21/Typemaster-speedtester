@@ -10,7 +10,7 @@ function Home() {
     return <Box bg='#f3f3f3' w={'100%'}>
     <Box bg = '#577b87' h = '60vh' >
         <Box  w='80%' m='auto'  display={{sm:'grid',md:'flex',lg:'flex'}}justifyContent='space-evenly' >
-            <Box w={"40%"}>
+            <Box w={"40%"} m='auto'>
                 <Image src='https://ichef.bbci.co.uk/images/ic/1280xn/p0252jmf.jpg' alt='Home_page' w='auto' mt='2rem'></Image>
             </Box>
             <Box display='flex' flexDirection='column'>
