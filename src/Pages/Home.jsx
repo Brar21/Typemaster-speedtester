@@ -46,17 +46,19 @@ function Home() {
             <Box bg='white' mt='-100px' w='70%' borderRadius='15px'  ml='15%' display={{md:'grid',lg:'flex'}} justifyContent='space-around'>
                 <Image src='https://www.tckpublishing.com/wp-content/uploads/2015/02/keyboard-finger-placement.jpg' width={'auto'} p='1.5rem'></Image>
                 <Box m={{sm:'1rem',lg:'3rem'}}>
+                    <Box p={4}>
                     <Heading textAlign='start' mb='1rem'>Learn Typing</Heading>
                     <Text textAlign='start' color={'black'} mb='1rem' >Speed up your learning progress with TypeMaster Free Exercises and develop valuable keyboarding skills!</Text>
                     <Link to="/typingteacher" className='pageLink'>Learn Typing Free </Link>
+                    </Box>
                 </Box>
             </Box>
             <Box bg='white'  w='70%' borderRadius='15px' mb='100px' ml='15%'  display={{lg:'flex',md:'grid'}} justifyContent='space-around'>
                 <Image src='https://www.pngtosvg.com/gallery/wp-content/uploads/2020/12/1949685070.png' width={'auto'} p='1.5rem'></Image>
-                <Box m={{s3:'1rem',lg:'4rem'}} p={{sm:"9rem"}}>
+                <Box m={{sm:"none",lg:'4rem'}} p={{sm:"5rem"}}>
+                    <Box p={4}>
                     <Heading textAlign='start' mb='1rem'>Typing Test</Heading>
                     <Text textAlign='start' color={'black'} mb='1rem'>Take an online typing test to find out your typing speed and impress friends or employers with your personal typing skills.</Text>
-                    <Box>
                     <Link to="/testspeed" className='pageLink'>Take Typing Test Free </Link>
                     </Box>
                 </Box>
