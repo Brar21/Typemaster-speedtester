@@ -7,11 +7,11 @@ import { FaRegKeyboard } from "react-icons/fa";
 import { Link } from "react-router-dom";
 function Home() {
 
-    return <Box bg='#f3f3f3'>
+    return <Box bg='#f3f3f3' w={'100%'}>
     <Box bg = '#577b87' h = '60vh' >
-        <Box  w='80%' m='auto'  display={{sm:'grid',md:'grid',lg:'flex'}}justifyContent='space-evenly' >
-            <Box>
-                <Image src='https://ichef.bbci.co.uk/images/ic/1280xn/p0252jmf.jpg' alt='Home_page' w='20rem' h='10rem' mt='2rem'></Image>
+        <Box  w='80%' m='auto'  display={{sm:'grid',md:'flex',lg:'flex'}}justifyContent='space-evenly' >
+            <Box w={"40%"}>
+                <Image src='https://ichef.bbci.co.uk/images/ic/1280xn/p0252jmf.jpg' alt='Home_page' w='auto' mt='2rem'></Image>
             </Box>
             <Box display='flex' flexDirection='column'>
                 <Heading color='white' textAlign='start' mb='1rem' mt='2rem'>Type Faster</Heading>
@@ -43,7 +43,7 @@ function Home() {
 
         <Box display='flex' flexDirection='column' gap='6'>
 
-            <Box bg='white' mt='-100px' w='70%' borderRadius='15px'  ml='15%' display={{lg:'flex',md:'grid'}} justifyContent='space-around'>
+            <Box bg='white' mt='-100px' w='70%' borderRadius='15px'  ml='15%' display={{md:'grid',lg:'flex'}} justifyContent='space-around'>
                 <Image src='https://www.tckpublishing.com/wp-content/uploads/2015/02/keyboard-finger-placement.jpg' width={'auto'} p='1.5rem'></Image>
                 <Box m='3rem'>
                     <Heading textAlign='start' mb='1rem'>Learn Typing</Heading>

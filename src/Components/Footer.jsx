@@ -6,7 +6,7 @@ function Footer() {
     return (
         <Box display={{lg:'flex',md:"grid"}} flexWrap='wrap'>
     <hr color="green" />
-        <Box className="footer" >
+        <Box display={{lg:'flex',md:"grid"}} flexWrap='wrap'>
             <h3>For Devlopers</h3>
             <Text>About</Text>
             <Text>High Scores</Text>
