@@ -12,7 +12,7 @@ function Login() {
     return <>
         <Container  w='100%' h={'100vh'} mt='5rem'>
             <Heading textAlign='start' margin='1rem 0'>Log in</Heading>
-            <HStack spacing='1.5rem'>
+            <HStack spacing='1.5rem' display={'flex'} gap='1rem' m={'auto'} wrap={'wrap'}>
                 {!Data ? <LoginSocialFacebook
                     appId='523530702789841'
                     onResolve={(res) => {
@@ -24,7 +24,7 @@ function Login() {
                     }}
                 >
                     
-                    <Button colorScheme='twitter' spa leftIcon={<FaFacebook />}>
+                    <Button colorScheme='twitter' leftIcon={<FaFacebook />}>
                         Log in with Facebook
                     </Button>
                 </LoginSocialFacebook> : ''}
@@ -37,14 +37,13 @@ function Login() {
                Log in with Google
             </Button>
             </HStack>
-            <Text textAlign='start' margin='1rem 0'>or you can login with your email:</Text>
+            <Text textAlign='start' margin='auto'>or you can login with your email:</Text>
             <Box w='100%' >
 
             <Input placeholder='Email Address' type='email' margin='1rem 0'/>
                 <Input placeholder='Enter Password' type='password' margin='1rem 0' />
-                <Box marginRight='58%' marginBottom='1rem' marginTop='1rem'>
+                <Box  marginBottom='1rem' marginTop='1rem'>
                     <Button colorScheme='blue'>LOG IN</Button> <strong>or</strong> <Link to='/signup'>Sign Up now</Link>
-
                 </Box>
                 <Link to='/resetpassword'>Forget your password?</Link>
 
