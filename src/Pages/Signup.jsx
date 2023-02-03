@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Signup() {
 
     return <>
-            <Container w='100%'>
+            <Container w='100%' h={'100vh'}>
             <Heading textAlign='start' margin='1rem 0'>Create a free Account</Heading>
             <Text textAlign='start' margin='1rem 0'>Already have<Link to='/login'> Login now</Link></Text>
                
