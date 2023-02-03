@@ -26,21 +26,14 @@ export const TestSpeed = () => {
         <Box w='100%' bg='#577b87'>
             <Box w='70%' display="flex" flexdirection="row" m="auto" h='auto'  p='5rem 0' gap={12}>
                 <Box bg="white" h='45vh' borderRadius={10} w='80%' m='auto'>
-                    {/* <Text textAlign='start' p='1.5rem' fontSize={25} color='gray.500'> */}
-                    {/* <Text fontSize={25} textAlign='start' p='1.5rem'> */}
-                    {/* </Text> */}
-                {/* </Text> */}
+                 
                     <Textarea placeholder={'Start Typing....'}  border='none' mt={'5px'}>
                 </Textarea>
 
                 </Box>
                 <Box  >
                     <Text fontSize={25} fontWeight='700' color='whatsapp.500' display="flex" gap={3}><Text pt='5px' fontSize={28} color='white'><SlSpeedometer /></Text>SPEED</Text>
-                    {/* <span> */}
-                        {/* <Text fontFamily='mono' fontWeight='800' fontSize={28} m='8px' color='facebook.200' > */}
-                    {/* </Text> */}
-                {/* </span> */}
-
+        
                     <Text fontSize={25} fontWeight='700' color='whatsapp.500' display="flex" gap={3}><Text pt='5px' fontSize={28} color='white'><GiArcheryTarget /></Text>ACCURACY</Text>
                     <span><Text fontFamily='mono' fontWeight='800' fontSize={28} m='8px'  color='facebook.200'>100%</Text></span>
                     <Button mt='2rem' bg='none' color='#ffe318' fontSize={25} _hover={{ bg: 'none' }} onClick={onOpen}><Text pr='5px'><VscDebugRestart /></Text>Restart</Button>
