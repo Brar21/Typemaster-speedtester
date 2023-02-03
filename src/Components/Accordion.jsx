@@ -29,8 +29,9 @@ export const Accordions = (props) => {
                                 </AccordionButton>
                             </h2>
                             <AccordionPanel pb={4} textAlign='start'>
-                                <Box display='flex' flexDirection='row' gap={10}>
+                                <Box display={{base:'grid',lg:'flex'}} flexDirection='row' gap={10}>
                                     <Box w='60%' h='auto' m='auto' fontSize={15} display='flex' flexDirection='column'><Text></Text>{text}
+                                      
                                         <Text>{tex} </Text>
                                         <Text>{te} </Text>
                                         <Text>{t}</Text>
