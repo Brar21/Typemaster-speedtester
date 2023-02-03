@@ -46,7 +46,6 @@ function Login() {
                     <Button colorScheme='blue'>LOG IN</Button> <strong>or</strong> <Link to='/signup'>Sign Up now</Link>
                 </Box>
                 <Link to='/resetpassword'>Forget your password?</Link>
-
             </Box>
             
         </Container>
