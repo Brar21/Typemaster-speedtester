@@ -10,7 +10,7 @@ function Login() {
     const [Data, setData] = useState(null);
     
     return <>
-        <Container  w='100%'>
+        <Container  w='100%' h={'100vh'} mt='5rem'>
             <Heading textAlign='start' margin='1rem 0'>Log in</Heading>
             <HStack spacing='1.5rem'>
                 {!Data ? <LoginSocialFacebook
