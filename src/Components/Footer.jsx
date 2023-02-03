@@ -14,23 +14,6 @@ function Footer() {
             <Text>Contact Us</Text>
             <strong>Donate</strong>
             <Text>Privacy & Terms</Text>
-            {/* For select diffrent languages we  make select tag here */}
-
-            <select name="Language" id="language">
-                <option value="EN">
-                    English
-                </option>
-                <option value="HN">
-                    Hindi
-                </option>  <option value="EN">
-                    English
-                </option>  <option value="PN">
-                    Punjabi
-                </option>  <option value="IT">
-                    Italian
-                </option>
-            </select>
-{/* Now time to style this Footer */}
             </Box>
 
         </Box>
