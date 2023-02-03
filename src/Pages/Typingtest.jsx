@@ -27,7 +27,7 @@ function Test() {
     const { isOpen, onOpen, onClose } = useDisclosure()
 
     return (
-        <Box w='100%' h='auto'>
+        <Box w='100%' h='auto' >
             <Box bg='#577b87' h={{base:'120vh',lg:'90vh'}}>
                 <Box w='70%' m='auto' display={{base:'grid',lg:'flex'}} flexDirection='row' gap={10} p='1rem' >
                     <Box>
