@@ -1,4 +1,4 @@
-import { Button, HStack, Input, Heading, Text } from '@chakra-ui/react';
+import { Button, Input, Heading, Text } from '@chakra-ui/react';
 import { Container, Box,Stack,Checkbox } from '@chakra-ui/react';
 import { Link } from "react-router-dom";
 
@@ -25,7 +25,6 @@ function Signup() {
                 </Stack>
                     <Box marginRight='80%' marginBottom='1rem' marginTop='1rem'>
                         <Button colorScheme='blue'>SIGN UP</Button> 
-
                     </Box>
                  
 
