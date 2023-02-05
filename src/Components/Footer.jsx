@@ -5,7 +5,7 @@ function Footer() {
     return (
         <Box w={"full"}  h={10}  margin={'1rem auto'}>
     <hr color="green" />
-        <Box display={'flex'} width='60%' gap={7} textAlign='center' flexWrap='wrap' m={'auto'}>
+        <Box display={'flex'} width='80%' gap={15} textAlign='center' flexWrap='wrap' m={'auto'} p='1rem'>
             <h3>For Devlopers</h3>
             <Text>About</Text>
             <Text>High Scores</Text>
