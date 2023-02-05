@@ -54,7 +54,7 @@ export const TestSpeed = () => {
                                 </AlertDialogBody>
 
                                 <AlertDialogFooter m='1rem auto'>
-                                    <Button  colorScheme='whatsapp' p='2rem 2.5rem' fontSize={30}>
+                                    <Button  colorScheme='whatsapp' p='2rem 2.5rem'fontSize={{base:18,lg:30}}>
                                         <Link herf="/testspeed/test">Start Typing Again</Link>
                                     </Button>
 
