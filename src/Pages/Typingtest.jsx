@@ -28,8 +28,8 @@ function Test() {
 
     return (
         <Box  w={{base:'auto',lg:'100%'}} h='auto' >
-            <Box bg='#577b87' h={{base:'90vh',lg:'80vh',xl:'80vh'}} >
-                <Box w='70%' m='auto' display={{base:'grid',lg:'flex'}} flexDirection='row' gap={10} p='1rem' >
+            <Box bg='#577b87' h={{base:'117vh',md:"88vh",xl:'80vh'}} >
+                <Box w='70%' m='auto' display={{base:'grid',lg:'flex'}} flexDirection='row' gap={10}>
                     <Box>
                         <Image w='auto' borderRadius={20} src='https://i.pinimg.com/originals/3f/82/40/3f8240fa1d16d0de6d4e7510b43b37ba.gif' />
                     </Box>
@@ -72,7 +72,7 @@ function Test() {
                 <Image w='50%' m='auto' h={{base:'auto',lg:400}} src='https://img.freepik.com/premium-vector/gold-silver-bronze-medals-flat-style-icon-set_201904-154.jpg?w=2000' />
                 <Box display={{base:'grid',md:"grid",lg:'flex'}} w={{base:'auto',lg:'100%'}} m='auto' flexDirection='row' gap={10} >
                     <Box w={{base:'auto',lg:'70%'}} m='auto' color='black'>
-                        <TableContainer>
+                        <TableContainer >
                             <Table variant='simple'>
 
                                 <Thead w={{base:'auto',lg:'100%'}} >
