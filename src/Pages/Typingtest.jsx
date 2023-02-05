@@ -68,35 +68,35 @@ function Test() {
                     </Box>
                 </Box>
             </Box>
-            <Box w='70%' bg='white' m='-14rem auto 0' border='2px solid red' borderRadius={15} >
+            <Box w='70%' bg='white' m='-10rem auto 0' border='2px solid red' borderRadius={15} >
                 <Image w='50%' m='auto' h={{base:'auto',lg:400}} src='https://img.freepik.com/premium-vector/gold-silver-bronze-medals-flat-style-icon-set_201904-154.jpg?w=2000' />
-                <Box display={{base:'grid',lg:'flex'}} w='90%' m='auto' flexDirection='row' gap={10}>
-                    <Box w={{base:'30%',lg:'70%'}} m='1rem'>
+                <Box display={{base:'grid',md:"grid",lg:'flex'}} w='90%' m='auto' flexDirection='row' gap={10}>
+                    <Box w={{base:'30%',lg:'70%'}} m='1rem auto' color='black'>
                         <TableContainer>
                             <Table variant='simple'>
 
-                                <Thead w={{base:'auto',lg:'50%'}}>
-                                    <Tr display='flex' flexDirection='row' w='100%' justifyContent='space-between'>
+                                <Thead w={{base:'auto',lg:'80%'}} >
+                                    <Tr display='flex' flexDirection='row' w={{base:'auto',lg:'80%'}} justifyContent='space-between'>
                                         <Th display='flex' gap='5px' pl="1rem"><GrCertificate fontSize={20} />CERTIFICATE</Th>
                                         <Th display='flex' gap='5px' ml='2rem'><SlSpeedometer fontSize={20} />SPEED</Th>
                                         <Th display='flex' gap='5px'><GiOnTarget fonrSize={20} />ACCURACY</Th>
                                     </Tr>
                                 </Thead>
                                 <hr />
-                                <Tbody fontWeight='500' color={'black'}>
-                                    <Tr display='flex' flexDirection='row' w='100%' justifyContent='space-between' alignItems='center'>
+                                <Tbody w={{base:'auto',lg:'80%'}} fontWeight='500' color={'black'}>
+                                    <Tr display='flex' flexDirection='row' w={{base:'auto',lg:'80%'}} justifyContent='space-between' alignItems='center'>
                                         <Td display='flex' textAlign='center'><Image w={30} src='https://cdn.vectorstock.com/i/preview-1x/65/82/silver-rosette-vector-996582.jpg' /><Text pt={2}>PLATINUM</Text></Td>
                                         <Td pl='5px'>70 WPM</Td>
                                         <Td>99.5%</Td>
                                     </Tr>
                                     <hr />
-                                    <Tr display='flex' flexDirection='row' w='100%' justifyContent='space-between'>
+                                    <Tr display='flex' flexDirection='row'w={{base:'auto',lg:'80%'}}justifyContent='space-between' color='black'>
                                         <Td display='flex' textAlign='center' ><Image w={35} src='https://static.vecteezy.com/system/resources/previews/005/724/486/original/gold-circle-medal-with-red-ribbon-golden-round-trophy-for-first-place-of-competition-metal-award-for-leader-on-white-background-honor-victory-prize-isolated-illustration-vector.jpg' /><Text pt={3}>GOLD</Text></Td>
                                         <Td pr='5px'>50 WPM</Td>
                                         <Td>98.7%</Td>
                                     </Tr>
                                     <hr />
-                                    <Tr display='flex' flexDirection='row' w='100%' justifyContent='space-between'>
+                                    <Tr display='flex' flexDirection='row' w={{base:'auto',lg:'100%'}}justifyContent='space-between' color='black'>
                                         <Td display='flex' textAlign='center'><Image w={30} src='https://t3.ftcdn.net/jpg/04/87/34/18/360_F_487341885_43bjb9IUYv8c7Fhxm5kp9KgvWgZUeNMo.jpg' /><Text pt={2}>SILVER</Text></Td>
                                         <Td>40 WPM</Td>
                                         <Td>96%</Td>
@@ -105,8 +105,7 @@ function Test() {
                                 </Tbody>
                             </Table>
                         </TableContainer>
-                    </Box>
-                    <Box width={{base:'40%',sm:"50%",lg:'30%'}} m={{base:' 1rem auto',sm:'auto',lg:'1rem'}}>
+                    <Box width={{base:'200%',sm:"80%",lg:'auto'}} m={{base:' 1rem auto',sm:'auto',lg:'1rem'}}>
                         <Text textAlign='start' fontSize={18} color='black'>
                             You can take the test as many times as you want! Only the best score will count towards your certification, there’s no need to worry about making a mistake.</Text>
                         <Box display='flex' h='5rem' mt={5} color='blue' fontSize={20} fontWeight='500' textAlign='center' _hover={{ textDecoration: "underline", gap: "1.5rem" }} gap='0.5rem' >
@@ -115,7 +114,9 @@ function Test() {
                     </Box>
                 </Box>
             </Box>
-        </Box>
+            </Box>
+            </Box>
+            
     )
 }
 export default Test;
