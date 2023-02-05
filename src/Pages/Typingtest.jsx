@@ -71,7 +71,7 @@ function Test() {
             <Box w='70%' bg='white' m='-10rem auto 0' border='2px solid red' borderRadius={15} >
                 <Image w='50%' m='auto' h={{base:'auto',lg:400}} src='https://img.freepik.com/premium-vector/gold-silver-bronze-medals-flat-style-icon-set_201904-154.jpg?w=2000' />
                 <Box display={{base:'grid',md:"grid",lg:'flex'}} w='90%' m='auto' flexDirection='row' gap={10}>
-                    <Box w={{base:'30%',lg:'70%'}} m='1rem auto' color='black'>
+                    <Box w={{base:'auto',lg:'70%'}} m=' auto' color='black'>
                         <TableContainer>
                             <Table variant='simple'>
 
@@ -105,7 +105,7 @@ function Test() {
                                 </Tbody>
                             </Table>
                         </TableContainer>
-                    <Box width={{base:'200%',sm:"80%",lg:'auto'}} m={{base:' 1rem auto',sm:'auto',lg:'1rem'}}>
+                    <Box width={{base:'50%',sm:"80%",lg:'auto'}} m={{base:'auto',lg:'1rem'}}>
                         <Text textAlign='start' fontSize={18} color='black'>
                             You can take the test as many times as you want! Only the best score will count towards your certification, there’s no need to worry about making a mistake.</Text>
                         <Box display='flex' h='5rem' mt={5} color='blue' fontSize={20} fontWeight='500' textAlign='center' _hover={{ textDecoration: "underline", gap: "1.5rem" }} gap='0.5rem' >
