@@ -28,7 +28,7 @@ function Test() {
 
     return (
         <Box w='100%' h='auto' >
-            <Box bg='#577b87' h={{base:'120vh',lg:'90vh'}}>
+            <Box bg='#577b87' h={{base:'90vh',lg:'80vh',xl:'50vh'}}>
                 <Box w='70%' m='auto' display={{base:'grid',lg:'flex'}} flexDirection='row' gap={10} p='1rem' >
                     <Box>
                         <Image w='auto' borderRadius={20} src='https://i.pinimg.com/originals/3f/82/40/3f8240fa1d16d0de6d4e7510b43b37ba.gif' />
@@ -75,22 +75,22 @@ function Test() {
                         <TableContainer>
                             <Table variant='simple'>
 
-                                <Thead w={{base:'auto',lg:'80%'}} >
-                                    <Tr display='flex' flexDirection='row' w={{base:'auto',lg:'80%'}} justifyContent='space-between'>
+                                <Thead w={{base:'auto',lg:'100%'}} >
+                                    <Tr display='flex' flexDirection='row' w={{base:'auto',lg:'100%'}} justifyContent='space-between'>
                                         <Th display='flex' gap='5px' pl="1rem"><GrCertificate fontSize={20} />CERTIFICATE</Th>
                                         <Th display='flex' gap='5px' ml='2rem'><SlSpeedometer fontSize={20} />SPEED</Th>
                                         <Th display='flex' gap='5px'><GiOnTarget fonrSize={20} />ACCURACY</Th>
                                     </Tr>
                                 </Thead>
                                 <hr />
-                                <Tbody w={{base:'auto',lg:'80%'}} fontWeight='500' color={'black'}>
-                                    <Tr display='flex' flexDirection='row' w={{base:'auto',lg:'80%'}} justifyContent='space-between' alignItems='center'>
+                                <Tbody w={{base:'auto',lg:'100%'}} fontWeight='500' color={'black'}>
+                                    <Tr display='flex' flexDirection='row' w={{base:'auto',lg:'100%'}} justifyContent='space-between' alignItems='center'>
                                         <Td display='flex' textAlign='center'><Image w={30} src='https://cdn.vectorstock.com/i/preview-1x/65/82/silver-rosette-vector-996582.jpg' /><Text pt={2}>PLATINUM</Text></Td>
                                         <Td pl='5px'>70 WPM</Td>
                                         <Td>99.5%</Td>
                                     </Tr>
                                     <hr />
-                                    <Tr display='flex' flexDirection='row'w={{base:'auto',lg:'80%'}}justifyContent='space-between' color='black'>
+                                    <Tr display='flex' flexDirection='row'w={{base:'auto',lg:'100%'}}justifyContent='space-between' color='black'>
                                         <Td display='flex' textAlign='center' ><Image w={35} src='https://static.vecteezy.com/system/resources/previews/005/724/486/original/gold-circle-medal-with-red-ribbon-golden-round-trophy-for-first-place-of-competition-metal-award-for-leader-on-white-background-honor-victory-prize-isolated-illustration-vector.jpg' /><Text pt={3}>GOLD</Text></Td>
                                         <Td pr='5px'>50 WPM</Td>
                                         <Td>98.7%</Td>
