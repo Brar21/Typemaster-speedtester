@@ -49,7 +49,7 @@ export const TestSpeed = () => {
                                     <Text bg='beige' w='150px' h='150px' borderRadius='50%' m='auto'  p={{base:'10% 10.8%',lg:"5% 5.8%"}}><VscDebugStart fontSize={90} fill='green' /></Text>
                                 </AlertDialogHeader>
 
-                                <AlertDialogBody m='auto' fontSize={23} fontWeight='600'>
+                                <AlertDialogBody m='auto' fontSize={{base:15,lg:23}} fontWeight='600'>
                                     <Text display='flex'> Prepare yourself before start typing...</Text>
                                 </AlertDialogBody>
 
