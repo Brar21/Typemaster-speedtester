@@ -46,7 +46,7 @@ export const TestSpeed = () => {
                     >                                <AlertDialogOverlay  >
                             <AlertDialogContent  >
                                 <AlertDialogHeader fontSize='lg' fontWeight='bold'>
-                                    <Text bg='beige' w='150px' h='150px' borderRadius='50%' m='auto' p="5% 5.8%"><VscDebugStart fontSize={90} fill='green' /></Text>
+                                    <Text bg='beige' w='150px' h='150px' borderRadius='50%' m='auto'  p={{base:'10% 10.8%',lg:"5% 5.8%"}}><VscDebugStart fontSize={90} fill='green' /></Text>
                                 </AlertDialogHeader>
 
                                 <AlertDialogBody m='auto' fontSize={23} fontWeight='600'>
