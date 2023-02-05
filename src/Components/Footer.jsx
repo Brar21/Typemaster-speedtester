@@ -1,5 +1,4 @@
 import {Box,Text} from "@chakra-ui/react";
-import "../App.css"
 
 function Footer() {
      
@@ -11,7 +10,7 @@ function Footer() {
             <Text>About</Text>
             <Text>High Scores</Text>
             <Text>FAQ</Text>
-            <Text>Contact Us</Text>
+            <Text >Contact Us</Text>
                 <Text as={'button'} border={2} borderColor='yellow' color='teal.500'>
                 <strong>Donate</strong>
                 </Text>
