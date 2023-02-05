@@ -37,21 +37,21 @@ import {
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import {useState} from "react";
 
-const Links = ['Typing Teacher', 'Test Speed', 'Learning Tool'];
-
-const NavLink = ({ children }) => (
-  <Link
-    px={2}
-    py={1}
-    rounded={'md'}
-    _hover={{
-      textDecoration: 'none',
-      bg: useColorModeValue('gray.200', 'gray.700'),
-    }}
-    to={'#'}>
-    {children}
-  </Link>
-);
+//const Links = ['Typing Teacher', 'Test Speed', 'Learning Tool'];
+//const links=['/','/test']
+//const NavLink = ({ children }) => (
+//  <Link
+//    px={2}
+//    py={1}
+//    rounded={'md'}
+//    _hover={{
+//      textDecoration: 'none',
+//      bg: useColorModeValue('gray.200', 'gray.700'),
+//    }}
+//    to={links}>
+//    {children}
+//  </Link>
+//);
 
 export default function Simple() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -72,14 +72,19 @@ export default function Simple() {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={'center'}>
-            <Box>TypeTest</Box>
+                      <Box>
+                          <Link to={'/'}>        
+                          TypeTest
+                          </Link>
+                      </Box>
             <HStack
               as={'nav'}
               spacing={4}
               display={{ base: 'none', md: 'flex' }}>
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
-              ))}
+                          <Link to={'/typingteacher'}>Typing Teacher</Link>
+             <Link to={'/testspeed'}>Test Speed</Link>
+             <Link to={'/techniques'}>Learning Tool</Link>
+                          
             </HStack>
           </HStack>
         { !login ?  <Flex alignItems={'center'}>
@@ -114,9 +119,7 @@ export default function Simple() {
         {isOpen ? (
           <Box pb={4} display={{ md: 'none' }}>
             <Stack as={'nav'} spacing={4}>
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
-              ))}
+             
             </Stack>
           </Box>
         ) : null}
