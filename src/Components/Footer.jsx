@@ -14,8 +14,6 @@ function Footer() {
                 <Text as={'button'} border={2} borderColor='yellow' color='teal.500'>
                 <strong>Donate</strong>
                 </Text>
-                
-                
             <Text>Privacy & Terms</Text>
             </Box>
 
