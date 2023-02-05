@@ -35,8 +35,9 @@ import {
   Stack,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
+import {useState} from "react";
 
-const Links = ['Dashboard', 'Projects', 'Team'];
+const Links = ['Home', 'Projects', 'Team'];
 
 const NavLink = ({ children }) => (
   <Link
@@ -54,7 +55,7 @@ const NavLink = ({ children }) => (
 
 export default function Simple() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+ const [login,setLogin]=useState(false)
   return (
     <>
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
@@ -77,7 +78,7 @@ export default function Simple() {
               ))}
             </HStack>
           </HStack>
-          <Flex alignItems={'center'}>
+        { !login ?  <Flex alignItems={'center'}>
             <Menu>
               <MenuButton
                 as={Button}
@@ -99,7 +100,7 @@ export default function Simple() {
                 <MenuItem>Link 3</MenuItem>
               </MenuList>
             </Menu>
-          </Flex>
+          </Flex>:<Button>Login</Button>}
         </Flex>
 
         {isOpen ? (
