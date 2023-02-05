@@ -55,7 +55,7 @@ const NavLink = ({ children }) => (
 
 export default function Simple() {
   const { isOpen, onOpen, onClose } = useDisclosure();
- const [login,setLogin]=useState(false)
+ const [login,setLogin]=useState(true)
   return (
     <>
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
@@ -100,7 +100,11 @@ export default function Simple() {
                 <MenuItem>Logout</MenuItem>
               </MenuList>
             </Menu>
-          </Flex>:<Button>Login</Button>}
+                  </Flex>:<Box  display={'flex'}  gap={4} textAlign={'center'}>
+                          <Button>Login</Button>
+                          <Button display={{base: 'none',md:'flex'}}>Sign-up</Button>
+            </Box>
+            }
         </Flex>
 
         {isOpen ? (
