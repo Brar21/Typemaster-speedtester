@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 
 //function Navbar() {
-    
+
 //    return <div className="nav">
-     
+
 //        <Link to='/'><h1>Type Master</h1></Link>
 //        <Link to="/typingteacher"><strong>TYPING TEACHER</strong></Link>
 //        <Link to="/testspeed"><strong>TEST SPEED</strong></Link>
@@ -13,7 +13,6 @@ import { Link } from "react-router-dom";
 //            <b>or</b>
 //            <Link to="/signup" className="signupButton"><strong>SIGNUP</strong></Link>
 //        </div>
-
 
 //    </div>
 //}
@@ -33,9 +32,9 @@ import {
   useDisclosure,
   useColorModeValue,
   Stack,
-} from '@chakra-ui/react';
-import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
-import {useState} from "react";
+} from "@chakra-ui/react";
+import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { useState } from "react";
 
 //const Links = ['Typing Teacher', 'Test Speed', 'Learning Tool'];
 //const links=['/','/test']
@@ -55,76 +54,78 @@ import {useState} from "react";
 
 export default function Simple() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-    const [login,setLogin]=useState(false)
-    const handlelick=() =>
-    {
-        setLogin(false)
-    }
+  const [login] = useState(true);
+
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
-        <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
+      <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
+        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
-            size={'md'}
+            size={"md"}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            aria-label={'Open Menu'}
-            display={{ md: 'none' }}
+            aria-label={"Open Menu"}
+            display={{ md: "none" }}
             onClick={isOpen ? onClose : onOpen}
           />
-          <HStack spacing={8} alignItems={'center'}>
-                      <Box>
-                          <Link to={'/'}>        
-                          TypeTest
-                          </Link>
-                      </Box>
+          <HStack spacing={8} alignItems={"center"}>
+            <Box>
+              <Link to={"/"}>TypeTest</Link>
+            </Box>
             <HStack
-              as={'nav'}
+              as={"nav"}
               spacing={4}
-              display={{ base: 'none', md: 'flex' }}>
-                          <Link to={'/typingteacher'}>Typing Teacher</Link>
-             <Link to={'/testspeed'}>Test Speed</Link>
-             <Link to={'/techniques'}>Learning Tool</Link>
-                          
+              display={{ base: "none", md: "flex" }}
+            >
+              <Link to={"/typingteacher"}>Typing Teacher</Link>
+              <Link to={"/testspeed"}>Test Speed</Link>
+              <Link to={"/techniques"}>Learning Tool</Link>
             </HStack>
           </HStack>
-        { !login ?  <Flex alignItems={'center'}>
-            <Menu>
-              <MenuButton
-                as={Button}
-                rounded={'full'}
-                variant={'link'}
-                cursor={'pointer'}
-                minW={0}>
-                <Avatar
-                  size={'sm'}
-                  src={
-                    'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
-                  }
-                />
-              </MenuButton>
-              <MenuList>
-                <MenuItem>Profile</MenuItem>
-                <MenuItem>Setting</MenuItem>
-                <MenuDivider />
-                <MenuItem>Logout</MenuItem>
-              </MenuList>
-            </Menu>
-                  </Flex>:<Box  display={'flex'}  gap={4} textAlign={'center'}>
-                          <Button onClick={handlelick}>Login</Button>
-                          <Button display={{base: 'none',md:'flex'}}>Sign-up</Button>
+          {!login ? (
+            <Flex alignItems={"center"}>
+              <Menu>
+                <MenuButton
+                  as={Button}
+                  rounded={"full"}
+                  variant={"link"}
+                  cursor={"pointer"}
+                  minW={0}
+                >
+                  <Avatar
+                    size={"sm"}
+                    src={
+                      "https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9"
+                    }
+                  />
+                </MenuButton>
+                <MenuList>
+                  <MenuItem>Profile</MenuItem>
+                  <MenuItem>Setting</MenuItem>
+                  <MenuDivider />
+                  <MenuItem>Logout</MenuItem>
+                </MenuList>
+              </Menu>
+            </Flex>
+          ) : (
+            <Box display={"flex"} gap={6} textAlign={"center"}>
+              <Link to={'/login'}>Login</Link>
+              <Link to={'/signup'} display={{ base: "none", md: "flex" }}>Sign-up</Link>
             </Box>
-            }
+          )}
         </Flex>
 
         {isOpen ? (
-          <Box pb={4} display={{ md: 'none' }}>
-            <Stack as={'nav'} spacing={4}>
-             
+          <Box pb={4} display={{ md: "none" }}>
+            <Stack as={"nav"} spacing={4}>
+              <Link to={"/typingteacher"}>Typing Teacher</Link>
+              <Link to={"/testspeed"}>Test Speed</Link>
+              <Link to={"/techniques"}>Learning Tool</Link>
+              <Link to={"/login"}>Login</Link>
+              <Link to={"/signup"}>SignUp</Link>
             </Stack>
           </Box>
         ) : null}
       </Box>
-
     </>
   );
 }
