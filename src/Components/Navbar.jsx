@@ -37,7 +37,7 @@ import {
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import {useState} from "react";
 
-const Links = ['Home', 'Projects', 'Team'];
+const Links = ['Typing Teacher', 'Test Speed', 'Learning Tool'];
 
 const NavLink = ({ children }) => (
   <Link
@@ -68,7 +68,7 @@ export default function Simple() {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={'center'}>
-            <Box>Logo</Box>
+            <Box>TypeTest</Box>
             <HStack
               as={'nav'}
               spacing={4}
@@ -94,10 +94,10 @@ export default function Simple() {
                 />
               </MenuButton>
               <MenuList>
-                <MenuItem>Link 1</MenuItem>
-                <MenuItem>Link 2</MenuItem>
+                <MenuItem>Profile</MenuItem>
+                <MenuItem>Setting</MenuItem>
                 <MenuDivider />
-                <MenuItem>Link 3</MenuItem>
+                <MenuItem>Logout</MenuItem>
               </MenuList>
             </Menu>
           </Flex>:<Button>Login</Button>}
