@@ -27,8 +27,8 @@ function Test() {
     const { isOpen, onOpen, onClose } = useDisclosure()
 
     return (
-        <Box w='100%' h='auto' >
-            <Box bg='#577b87' h={{base:'90vh',lg:'80vh',xl:'50vh'}}>
+        <Box  w={{base:'auto',lg:'100%'}} h='auto' >
+            <Box bg='#577b87' h={{base:'90vh',lg:'80vh',xl:'80vh'}} >
                 <Box w='70%' m='auto' display={{base:'grid',lg:'flex'}} flexDirection='row' gap={10} p='1rem' >
                     <Box>
                         <Image w='auto' borderRadius={20} src='https://i.pinimg.com/originals/3f/82/40/3f8240fa1d16d0de6d4e7510b43b37ba.gif' />
@@ -68,16 +68,16 @@ function Test() {
                     </Box>
                 </Box>
             </Box>
-            <Box w='70%' bg='white' m='-10rem auto 0' border='2px solid red' borderRadius={15} >
+            <Box w={{base:'auto',lg:'70%'}} bg='white' m='-10rem auto 0' border='2px solid red' borderRadius={15} >
                 <Image w='50%' m='auto' h={{base:'auto',lg:400}} src='https://img.freepik.com/premium-vector/gold-silver-bronze-medals-flat-style-icon-set_201904-154.jpg?w=2000' />
-                <Box display={{base:'grid',md:"grid",lg:'flex'}} w={{base:'auto',lg:'100%'}}m='auto' flexDirection='row' gap={10}>
+                <Box display={{base:'grid',md:"grid",lg:'flex'}} w={{base:'auto',lg:'100%'}} m='auto' flexDirection='row' gap={10} >
                     <Box w={{base:'auto',lg:'70%'}} m='auto' color='black'>
                         <TableContainer>
                             <Table variant='simple'>
 
                                 <Thead w={{base:'auto',lg:'100%'}} >
                                     <Tr display='flex' flexDirection='row' w={{base:'auto',lg:'100%'}} justifyContent='space-between'>
-                                        <Th display='flex' gap='5px' pl="1rem"><GrCertificate fontSize={20} />CERTIFICATE</Th>
+                                        <Th display='flex' gap='5px' pl="1rem"><GrCertificate fontSize={{base:'auto',lg:20}} />CERTIFICATE</Th>
                                         <Th display='flex' gap='5px' ml='2rem'><SlSpeedometer fontSize={20} />SPEED</Th>
                                         <Th display='flex' gap='5px'><GiOnTarget fonrSize={20} />ACCURACY</Th>
                                     </Tr>
@@ -105,7 +105,7 @@ function Test() {
                                 </Tbody>
                             </Table>
                         </TableContainer>
-                    <Box width={{base:'auto',lg:'auto'}} m={{base:'auto',lg:'1rem'}}>
+                    <Box width={{base:'auto',lg:'auto'}} m={{base:'auto',lg:'1rem'}} p='1rem'>
                         <Text textAlign='start' fontSize={18} color='black'>
                             You can take the test as many times as you want! Only the best score will count towards your certification, there’s no need to worry about making a mistake.</Text>
                         <Box display='flex' h='5rem' mt={5} color='blue' fontSize={20} fontWeight='500' textAlign='center' _hover={{ textDecoration: "underline", gap: "1.5rem" }} gap='0.5rem' >
