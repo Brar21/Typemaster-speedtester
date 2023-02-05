@@ -41,7 +41,7 @@ export const TestSpeed = () => {
                         isOpen={isOpen}
                         onClose={onClose}
                         isCentered
-                        size="2xl"
+                        size={{base:'xs',lg:"2xl"}}
 
                     >                                <AlertDialogOverlay  >
                             <AlertDialogContent  >
