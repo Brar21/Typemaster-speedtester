@@ -16,10 +16,7 @@ import {
 import { Textarea } from "@chakra-ui/react";
 
 const texts = () =>
-  `As I sit in my room late at night, staring at the computer screen,I decide it would be a good idea to create this text There isnt much meaning to it,other than to get some simple practice A lot of the texts that have been created are rather short, and don't give a good representation of actual typing speed and accuracy They lack the length to gauge where your strengths and weaknesses are when typing`.split(
-    " "
-  );
-//.sort(() => Math.random()>0.5? 1:-1)
+  `As I sit in my room late at night, staring at the computer screen`.split(" ").sort(() => Math.random()>0.5? 1:-1)
 
 function Word(props) {
   const { text, active, correct } = props;
@@ -63,17 +60,60 @@ function Word(props) {
 }
 Word = React.memo(Word);
 
-function Timer(props) {
-  //const [speed,Setspeed]=useState(0)
-  const [timeElpased, SettimeElpased] = useState(0);
-  useEffect(() => {
-    if (props.startCounting) {
-      setInterval(() => {
-        SettimeElpased((oldtime) => oldtime + 1);
-      }, 1000);
-    }
-  }, [props.startCounting]);
-  return { timeElpased };
+function Timer(props)
+{
+    const {correctWords,startCounting}=props
+    //const [speed,Setspeed]=useState(0)
+    const [timeElpased,SettimeElpased]=useState(0);
+    useEffect(() =>
+    {
+        let id;
+        if(startCounting)
+        {
+            id=setInterval(() =>
+            {
+                SettimeElpased((oldtime) => oldtime+1);
+            },1000);
+        }
+        return () =>
+        {
+            clearInterval(id)
+        }
+    },[startCounting]);
+    const minutes=timeElpased/60
+    return <>  
+    <Text pt="5px" fontSize={28} color="white" display={'flex'}>
+    <SlSpeedometer />
+    SPEED
+  </Text>
+<span>
+  <Text
+    fontFamily="mono"
+    fontWeight="800"
+    fontSize={28}
+    m="8px"
+    color="facebook.200"
+  >
+   {((correctWords/minutes)||0).toFixed(2)} WPM
+  </Text>
+        </span>
+        <Text pt="5px" fontSize={28} color="white" display={'flex'}>
+              <GiArcheryTarget />
+            Time
+            </Text>
+        
+          <span>
+            <Text
+              fontFamily="mono"
+              fontWeight="800"
+              fontSize={28}
+              m="8px"
+              color="facebook.200"
+            >
+              {timeElpased}
+            </Text>
+          </span>
+    </>
 }
 export const TestSpeed = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -86,7 +126,14 @@ export const TestSpeed = () => {
     if (!startCount) {
       SetstartCounting(true);
     }
-    if (value.endsWith(" ")) {
+      if(value.endsWith(" "))
+      {
+          if(activeWord===randomText.current.length)
+          {
+              SetstartCounting(false)
+              Setinput("Completed")
+              return
+        }
       SetactiveWord((index) => index + 1);
       Setinput("");
       setcorrectWords((el) => {
@@ -114,11 +161,6 @@ export const TestSpeed = () => {
         <Box bg="white" h="45vh" borderRadius={10} w="80%" m="auto">
           <Text border={"1px solid"} color="black">
             {randomText.current.map((word, index) => {
-              //{
-              //    if(index===activeWord){
-              //        return (<strong>{word}</strong>)
-              //    }
-              //        return <span> {word} </span>
               return (
                 <Word
                   text={word}
@@ -129,7 +171,7 @@ export const TestSpeed = () => {
             })}
           </Text>
           <Textarea
-            placeholder={"Start Typing...."}
+            placeholder={"Start Typing....sds "}
             color="black"
             value={input}
             onChange={(e) => startType(e.target.value)}
@@ -137,57 +179,10 @@ export const TestSpeed = () => {
             mt={"5px"}
           ></Textarea>
         </Box>
-        <Box>
-          <Text
-            fontSize={25}
-            fontWeight="700"
-            color="whatsapp.500"
-            display="flex"
-            gap={3}
-          >
-            <Text pt="5px" fontSize={28} color="white">
-              <SlSpeedometer />
-            </Text>
-            SPEED
-          </Text>
-          <span>
-            {/*<Timer startCounting={startCount}/>*/}
-            <Text
-              fontFamily="mono"
-              fontWeight="800"
-              fontSize={28}
-              m="8px"
-              color="facebook.200"
-            >
-              {/*<Timer
-                      startCounting={startCount}
-                          />*/}
-              WPM
-            </Text>
-          </span>
-          <Text
-            fontSize={25}
-            fontWeight="700"
-            color="whatsapp.500"
-            display="flex"
-            gap={3}
-          >
-            <Text pt="5px" fontSize={28} color="white">
-              <GiArcheryTarget />
-            </Text>
-            ACCURACY
-          </Text>
-          <span>
-            <Text
-              fontFamily="mono"
-              fontWeight="800"
-              fontSize={28}
-              m="8px"
-              color="facebook.200"
-            >
-              100%
-            </Text>
-          </span>
+              <Box>
+                  <Timer startCounting={startCount}
+                      correctWords={correctWords.filter(Boolean).length} />
+        
           <Button
             mt="2rem"
             bg="none"
