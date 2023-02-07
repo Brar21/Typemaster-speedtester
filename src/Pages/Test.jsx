@@ -16,7 +16,9 @@ import {
 import { Textarea } from "@chakra-ui/react";
 
 const texts = () =>
-  `As I sit in my room late at night, staring at the computer screen`.split(" ").sort(() => Math.random()>0.5? 1:-1)
+  `As I sit in my room late at night, staring at the computer screen, I decide it would be a good idea to create this text. There isn't much meaning to it, other than to get some simple practice. A lot of the texts that have been created are rather short, and don't give a good representation of actual typing speed and accuracy. They lack the length to gauge where your strengths and weaknesses are when typing.`
+    .split(" ")
+    .sort(() => (Math.random() > 0.5 ? 1 : -1));
 
 function Word(props) {
   const { text, active, correct } = props;
@@ -60,60 +62,56 @@ function Word(props) {
 }
 Word = React.memo(Word);
 
-function Timer(props)
-{
-    const {correctWords,startCounting}=props
-    //const [speed,Setspeed]=useState(0)
-    const [timeElpased,SettimeElpased]=useState(0);
-    useEffect(() =>
-    {
-        let id;
-        if(startCounting)
-        {
-            id=setInterval(() =>
-            {
-                SettimeElpased((oldtime) => oldtime+1);
-            },1000);
-        }
-        return () =>
-        {
-            clearInterval(id)
-        }
-    },[startCounting]);
-    const minutes=timeElpased/60
-    return <>  
-    <Text pt="5px" fontSize={28} color="white" display={'flex'}>
-    <SlSpeedometer />
-    SPEED
-  </Text>
-<span>
-  <Text
-    fontFamily="mono"
-    fontWeight="800"
-    fontSize={28}
-    m="8px"
-    color="facebook.200"
-  >
-   {((correctWords/minutes)||0).toFixed(2)} WPM
-  </Text>
-        </span>
-        <Text pt="5px" fontSize={28} color="white" display={'flex'}>
-              <GiArcheryTarget />
-            Time
-            </Text>
-        
-          <span>
-            <Text
-              fontFamily="mono"
-              fontWeight="800"
-              fontSize={28}
-              m="8px"
-              color="facebook.200"
-            >
-              {timeElpased}
-            </Text>
-          </span>
+function Timer(props) {
+  const { correctWords, startCounting } = props;
+  const [timeElpased, SettimeElpased] = useState(0);
+  useEffect(() => {
+    let id;
+    if (startCounting) {
+      id = setInterval(() => {
+        SettimeElpased((oldtime) => oldtime + 1);
+      }, 1000);
+    }
+    return () => {
+      clearInterval(id);
+    };
+  }, [startCounting]);
+  const minutes = timeElpased / 60;
+  return (
+    <>
+      <Text pt="5px" fontSize={28} color="white" display={"flex"}>
+        <SlSpeedometer />
+        SPEED
+      </Text>
+      <span>
+        <Text
+          fontFamily="mono"
+          fontWeight="800"
+          fontSize={28}
+          m="8px"
+          color="facebook.200"
+        >
+          {Math.floor(correctWords / minutes || 0)} WPM
+        </Text>
+      </span>
+      <Text pt="5px" fontSize={28} color="white" display={"flex"}>
+        <GiArcheryTarget />
+        Time
+      </Text>
+
+      <span>
+        <Text
+          fontFamily="mono"
+          fontWeight="800"
+          fontSize={28}
+          m="8px"
+          color="facebook.200"
+        >
+          {timeElpased}
+        </Text>
+      </span>
     </>
+  );
 }
 export const TestSpeed = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -123,19 +121,20 @@ export const TestSpeed = () => {
   const [correctWords, setcorrectWords] = useState([]);
   const [startCount, SetstartCounting] = useState(false);
   function startType(value) {
+    if (activeWord === randomText.current.length) {
+      return;
+    }
     if (!startCount) {
       SetstartCounting(true);
     }
-      if(value.endsWith(" "))
-      {
-          if(activeWord===randomText.current.length)
-          {
-              SetstartCounting(false)
-              Setinput("Completed")
-              return
-        }
+    if (value.endsWith(" ")) {
+      if (activeWord === randomText.current.length - 1) {
+        SetstartCounting(false);
+        Setinput("Completed");
+      } else {
+        Setinput("");
+      }
       SetactiveWord((index) => index + 1);
-      Setinput("");
       setcorrectWords((el) => {
         const word = value.trim();
         const newResult = [...el];
@@ -159,7 +158,7 @@ export const TestSpeed = () => {
         gap={12}
       >
         <Box bg="white" h="45vh" borderRadius={10} w="80%" m="auto">
-          <Text border={"1px solid"} color="black">
+          <Text p={5} fontSize='25px' color="black">
             {randomText.current.map((word, index) => {
               return (
                 <Word
@@ -175,14 +174,17 @@ export const TestSpeed = () => {
             color="black"
             value={input}
             onChange={(e) => startType(e.target.value)}
-            border="none"
-            mt={"5px"}
+                      border="none"
+                      autoFocus={true}
+            alignSelf='end'
           ></Textarea>
         </Box>
-              <Box>
-                  <Timer startCounting={startCount}
-                      correctWords={correctWords.filter(Boolean).length} />
-        
+        <Box>
+          <Timer
+            startCounting={startCount}
+            correctWords={correctWords.filter(Boolean).length}
+          />
+
           <Button
             mt="2rem"
             bg="none"
@@ -233,9 +235,10 @@ export const TestSpeed = () => {
                   <Button
                     colorScheme="whatsapp"
                     p="2rem 2.5rem"
-                    fontSize={{ base: 18, lg: 30 }}
+                                      fontSize={{base: 18,lg: 30}}
+                                      onClick={()=>window.location.reload()}
                   >
-                    <Link herf="/testspeed/test">Start Typing Again</Link>
+                    Start Typing Again
                   </Button>
                 </AlertDialogFooter>
               </AlertDialogContent>
