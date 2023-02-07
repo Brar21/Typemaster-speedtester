@@ -16,91 +16,86 @@ import {
 import { Textarea } from "@chakra-ui/react";
 
 const texts = () =>
-  `As I sit in my room late at night, staring at the computer screen,I decide it would be a good idea to create this text There isnt much meaning to it,other than to get some simple practice A lot of the texts that have been created are rather short, and don't give a good representation of actual typing speed and accuracy They lack the length to gauge where your strengths and weaknesses are when typing`.split(" ");
+  `As I sit in my room late at night, staring at the computer screen,I decide it would be a good idea to create this text There isnt much meaning to it,other than to get some simple practice A lot of the texts that have been created are rather short, and don't give a good representation of actual typing speed and accuracy They lack the length to gauge where your strengths and weaknesses are when typing`.split(
+    " "
+  );
 //.sort(() => Math.random()>0.5? 1:-1)
 
 function Word(props) {
   const { text, active, correct } = props;
 
-    const renders=useRef(0)
-    useEffect(() =>
-    {
-        renders.current+=1
-    })
-    if(correct===true)
-    {
-        return <span
+  if (correct === true) {
+    return (
+      <span
         style={{
-                color: "green",
-fontWeight:900        }}
-      >{text}({renders.current}){" "}</span>
-    }
-    if(correct===false)
-    {
-        return <span
-        style={{
-                color: "red",
-                fontWeight:900
+          color: "green",
+          fontWeight: 900,
         }}
       >
-            {text}({renders.current}){" "}
+        {text}{" "}
       </span>
-    }
-    if(active)
-    {
-        return (
-            <span
-                style={{
-                    fontWeight: "bold",
-                }}
-            >
-                {text}({renders.current}){" "}
-            </span>
-        )
-    };
-    return <span>{text} </span>
-};
-Word=React.memo(Word)
+    );
+  }
+  if (correct === false) {
+    return (
+      <span
+        style={{
+          color: "red",
+          fontWeight: 900,
+        }}
+      >
+        {text}{" "}
+      </span>
+    );
+  }
+  if (active) {
+    return (
+      <span
+        style={{
+          fontWeight: "bold",
+        }}
+      >
+        {text}{" "}
+      </span>
+    );
+  }
+  return <span>{text} </span>;
+}
+Word = React.memo(Word);
 
-function Timer(props)
-{
-    const [speed,Setspeed]=useState(0)
-    useEffect(() =>
-    {
-        if(props.startCounting)
-        {
-            setInterval(() =>
-            {
-                
-            },1000)
-        }
-    },[props.startCounting])
-    return {speed}
+function Timer(props) {
+  //const [speed,Setspeed]=useState(0)
+  const [timeElpased, SettimeElpased] = useState(0);
+  useEffect(() => {
+    if (props.startCounting) {
+      setInterval(() => {
+        SettimeElpased((oldtime) => oldtime + 1);
+      }, 1000);
+    }
+  }, [props.startCounting]);
+  return { timeElpased };
 }
 export const TestSpeed = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [input, Setinput] = useState("");
   const randomText = useRef(texts());
-    const [activeWord,SetactiveWord]=useState(0);
-    const [correctWords,setcorrectWords]=useState([])
-const[startCounting,SetstartCounting]=useState(false)
-    function startType(value)
-    {
-        if(!startCounting)
-        {
-            SetstartCounting(true)
-        }
+  const [activeWord, SetactiveWord] = useState(0);
+  const [correctWords, setcorrectWords] = useState([]);
+  const [startCount, SetstartCounting] = useState(false);
+  function startType(value) {
+    if (!startCount) {
+      SetstartCounting(true);
+    }
     if (value.endsWith(" ")) {
       SetactiveWord((index) => index + 1);
-        Setinput("");
-        setcorrectWords(el =>
-        {
-            const word=value.trim()
-            const newResult=[...el]
-            newResult[activeWord]=true
-            newResult[activeWord]=word===randomText.current[activeWord]
-            return newResult
-        })
+      Setinput("");
+      setcorrectWords((el) => {
+        const word = value.trim();
+        const newResult = [...el];
+        newResult[activeWord] = true;
+        newResult[activeWord] = word === randomText.current[activeWord];
+        return newResult;
+      });
     } else {
       Setinput(value);
     }
@@ -128,7 +123,7 @@ const[startCounting,SetstartCounting]=useState(false)
                 <Word
                   text={word}
                   active={index === activeWord}
-                      correct={correctWords[index]}
+                  correct={correctWords[index]}
                 />
               );
             })}
@@ -156,6 +151,7 @@ const[startCounting,SetstartCounting]=useState(false)
             SPEED
           </Text>
           <span>
+            {/*<Timer startCounting={startCount}/>*/}
             <Text
               fontFamily="mono"
               fontWeight="800"
@@ -163,10 +159,10 @@ const[startCounting,SetstartCounting]=useState(false)
               m="8px"
               color="facebook.200"
             >
-                          {/*<Timer
-                      startCounting={startCounting}
+              {/*<Timer
+                      startCounting={startCount}
                           />*/}
-                          WPM
+              WPM
             </Text>
           </span>
           <Text
