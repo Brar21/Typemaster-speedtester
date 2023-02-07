@@ -19,7 +19,7 @@ const texts = () =>
   `As I sit in my room late at night, staring at the computer screen,I decide it would be a good idea to create this text There isnt much meaning to it,other than to get some simple practice A lot of the texts that have been created are rather short, and don't give a good representation of actual typing speed and accuracy They lack the length to gauge where your strengths and weaknesses are when typing`.split(" ");
 //.sort(() => Math.random()>0.5? 1:-1)
 
-const Word = (props) => {
+function Word(props) {
   const { text, active, correct } = props;
 
     const renders=useRef(0)
@@ -33,7 +33,7 @@ const Word = (props) => {
         style={{
                 color: "green",
 fontWeight:900        }}
-      >{text}{" "}</span>
+      >{text}({renders.current}){" "}</span>
     }
     if(correct===false)
     {
@@ -43,7 +43,7 @@ fontWeight:900        }}
                 fontWeight:900
         }}
       >
-            {text}{" "}
+            {text}({renders.current}){" "}
       </span>
     }
     if(active)
@@ -54,13 +54,13 @@ fontWeight:900        }}
                     fontWeight: "bold",
                 }}
             >
-                {text}{" "}
+                {text}({renders.current}){" "}
             </span>
         )
     };
     return <span>{text} </span>
 };
-
+Word=React.memo(Word)
 export const TestSpeed = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [input, Setinput] = useState("");
