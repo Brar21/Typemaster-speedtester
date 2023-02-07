@@ -28,15 +28,39 @@ const texts = () =>
 const Word = (props) => {
   const { text, active, correct } = props;
 
-  return (
-    <span
-      style={{
-        fontWeight: active ? "bold" : "normal",
-      }}
-    >
-      {text}{" "}
-    </span>
-  );
+    if(correct===true)
+    {
+        return <span
+        style={{
+          color:"green"
+        }}
+      >
+            {text}
+      </span>
+    }
+    if(correct!==true)
+    {
+        return <span
+        style={{
+          color:"red"
+        }}
+      >
+            {text}
+      </span>
+    }
+    if(active)
+    {
+        return (
+            <span
+                style={{
+                    fontWeight: active? "bold":"normal",
+                }}
+            >
+                {text}{" "}
+            </span>
+        )
+    };
+    return <span>{text}</span>
 };
 
 export const TestSpeed = () => {
