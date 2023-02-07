@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "@chakra-ui/react";
 import { Text, Button, Box, useDisclosure } from "@chakra-ui/react";
 import { SlSpeedometer } from "react-icons/sl";
@@ -22,6 +22,11 @@ const texts = () =>
 const Word = (props) => {
   const { text, active, correct } = props;
 
+    const renders=useRef(0)
+    useEffect(() =>
+    {
+        renders.current+=1
+    })
     if(correct===true)
     {
         return <span
