@@ -28,8 +28,8 @@ function Test() {
 
     return (
         <Box  w={{base:'auto',lg:'100%'}} h='auto' >
-            <Box bg='#577b87' h={{base: '108vh',md: "70vh",xl: '70vh'}} p={{base:'1rem',md:'0rem'}} >
-                <Box w={{base:'auto',sm:'70%'}}  m='auto' display={{base:'grid',md:'flex'}} flexDirection='row' gap={10}>
+            <Box bg='#577b87' h={{base: '130vh',sm:'98vh',md: "80vh",lg:'80vh',xl: '70vh'}} p={{base:'1rem',md:'0rem'}} >
+                <Box w={{base:'auto',sm:'70%'}}  m='auto' display={{base:'grid',sm:'flex',md:'flex'}} flexDirection='row' gap={10}>
                     <Box>
                         <Image w='auto' borderRadius={20} src='https://i.pinimg.com/originals/3f/82/40/3f8240fa1d16d0de6d4e7510b43b37ba.gif' />
                     </Box>
