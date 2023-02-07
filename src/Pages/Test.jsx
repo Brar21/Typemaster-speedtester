@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link } from "@chakra-ui/react";
 import { Text, Button, Box, useDisclosure } from "@chakra-ui/react";
 import { SlSpeedometer } from "react-icons/sl";
 import { GiArcheryTarget } from "react-icons/gi";
@@ -60,6 +59,7 @@ function Word(props) {
   }
   return <span>{text} </span>;
 }
+// eslint-disable-next-line no-func-assign
 Word = React.memo(Word);
 
 function Timer(props) {
