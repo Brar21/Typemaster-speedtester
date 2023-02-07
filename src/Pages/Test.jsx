@@ -61,14 +61,35 @@ fontWeight:900        }}
     return <span>{text} </span>
 };
 Word=React.memo(Word)
+
+function Timer(props)
+{
+    const [speed,Setspeed]=useState(0)
+    useEffect(() =>
+    {
+        if(props.startCounting)
+        {
+            setInterval(() =>
+            {
+                
+            },1000)
+        }
+    },[props.startCounting])
+    return {speed}
+}
 export const TestSpeed = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [input, Setinput] = useState("");
   const randomText = useRef(texts());
     const [activeWord,SetactiveWord]=useState(0);
     const [correctWords,setcorrectWords]=useState([])
-
-  function startType(value) {
+const[startCounting,SetstartCounting]=useState(false)
+    function startType(value)
+    {
+        if(!startCounting)
+        {
+            SetstartCounting(true)
+        }
     if (value.endsWith(" ")) {
       SetactiveWord((index) => index + 1);
         Setinput("");
@@ -107,7 +128,7 @@ export const TestSpeed = () => {
                 <Word
                   text={word}
                   active={index === activeWord}
-                  correct={correctWords[index]}
+                      correct={correctWords[index]}
                 />
               );
             })}
@@ -142,7 +163,10 @@ export const TestSpeed = () => {
               m="8px"
               color="facebook.200"
             >
-              0 WPM
+                          {/*<Timer
+                      startCounting={startCounting}
+                          />*/}
+                          WPM
             </Text>
           </span>
           <Text
