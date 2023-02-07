@@ -23,8 +23,8 @@ export const TestSpeed = () => {
   
    
     return (
-        <Box w='100%' bg='#577b87'>
-            <Box w='70%' display="flex" flexdirection="row" m="auto" h='auto'  p='5rem 0' gap={12}>
+        <Box w='100%' h={'100vh'} bg='#577b87'>
+            <Box w='70%' display={{base:"none",lg:"flex"}} flexdirection="row" m="auto" h='auto'  p='5rem 0' gap={12}>
                 <Box bg="white" h='45vh' borderRadius={10} w='80%' m='auto'>
                  
                     <Textarea placeholder={'Start Typing....'}  border='none' mt={'5px'}>
