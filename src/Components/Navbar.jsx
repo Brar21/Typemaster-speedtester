@@ -107,16 +107,15 @@ export default function Simple() {
               </Menu>
             </Flex>
           ) : (
-            <Box display={"flex"} gap={6} textAlign={"center"}>
+            <Box display={"flex"} w={{base:"auto"}} gap={6} textAlign={"center"}>
               <Link to={'/login'}>Login</Link>
-              <Link to={'/signup'} display={{ base: "none", md: "flex" }}>Sign-up</Link>
             </Box>
           )}
         </Flex>
 
         {isOpen ? (
           <Box pb={4} display={{ md: "none" }}>
-            <Stack as={"nav"} spacing={4}>
+            <Stack as={"nav"} spacing={4} onClick={()=>onClose}>
               <Link to={"/typingteacher"}>Typing Teacher</Link>
               <Link to={"/testspeed"}>Test Speed</Link>
               <Link to={"/techniques"}>Learning Tool</Link>
