@@ -20,21 +20,53 @@ const texts =() =>
      I decide it would be a good idea to create this text. There isnt much meaning to it,
     other than to get some simple practice. A lot of the texts that have been created are rather short, 
     and don't give a good representation of actual typing speed and accuracy. 
-   They lack the length to gauge where your strengths and weaknesses are when typing`.split(' ').sort(()=>Math.random()>0.5?1:-1)
+   They lack the length to gauge where your strengths and weaknesses are when typing`.split(' ')
+        //.sort(() => Math.random()>0.5? 1:-1)
 
+const Word=(props) =>
+{
+    const {text,active}=props
+
+    return <span style={{
+        fontWeight:active?'bold':'normal'
+    }}>{props.text} </span>
+}        
 
 export const TestSpeed = () => {
    
     
     const { isOpen, onOpen, onClose } = useDisclosure();
   const [input,Setinput]=useState("")
-   const randomText=useRef(texts())
+    const randomText=useRef(texts())
+    const [activeWord,SetactiveWord]=useState(0)
+
+    function startType(value)
+    {
+        if(value.endsWith(' '))
+        {
+            SetactiveWord(index => index+1)
+            Setinput(value+" ")
+        } else
+        {
+            Setinput(value)
+        }
+    }
     return (
         <Box w='100%' h={'100vh'} bg='#577b87'>
             <Box w='70%' display={{base: "none",lg: "flex"}} flexdirection="row" m="auto" h='auto' p='5rem 0' gap={12}>
                 <Box bg="white" h='45vh' borderRadius={10} w='80%' m='auto'>
-                <Text border={'1px solid'} color='black'>{randomText.current.join(" ")}</Text>
-                    <Textarea placeholder={'Start Typing....'} color='black' value={input} onChange={(e)=>Setinput(e.target.value)}  border='none' mt={'5px'}>
+                    <Text border={'1px solid'} color='black'>{randomText.current.map((word,index) =>{
+                    //{
+                    //    if(index===activeWord){
+                    //        return (<strong>{word}</strong>)
+                    //    }
+                    //        return <span> {word} </span> 
+                        return <Word text={word}
+active={index===activeWord}
+                        />
+                        
+                })}</Text>
+                    <Textarea placeholder={'Start Typing....'} color='black' value={input} onChange={(e)=>startType(e.target.value)}  border='none' mt={'5px'}>
                 </Textarea>
 
                 </Box>
