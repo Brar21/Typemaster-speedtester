@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Home() {
 
     return <Box bg='#f3f3f3' w={'100%'}>
-    <Box bg = '#577b87' h = {{base:'48vh',md:'30vh',lg:'75vh',xl:'50vh'}} >
+    <Box bg = '#577b87' h = {{base:'60vh',md:'12v0h',lg:'50vh'}} >
         <Box  w='80%' m='auto' gap={'1rem'} display={{sm:'grid',md:'flex',lg:'flex'}} justifyContent='space-evenly' >
             <Box w={{base:'40%',lg:"30%"}} m='auto'>
                 <Image src='https://ichef.bbci.co.uk/images/ic/1280xn/p0252jmf.jpg' alt='Home_page'borderRadius={15}/>
