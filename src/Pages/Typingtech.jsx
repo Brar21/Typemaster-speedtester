@@ -4,7 +4,7 @@ import { Accordions } from '../Components/Accordion';
 function TypingTech() {
 
     return (
-        <Box w='70%' m='auto'>
+        <Box w='70%' m='auto' fontSize={'1rem'}>
             <Accordions Heading="How to put your Fingers on Keyboard ?" text="Touch typing is all about the idea that each finger has its own area on the keyboard. Thanks to that fact you can type without looking at the keys. Practice regularly and your fingers will learn their location on the keyboard through muscle memory." src='https://www.herzing.edu/sites/default/files/styles/fp_960_480/public/images/blog/computer_keyboard.png.webp?itok=kaZNbwZI' />
 
             <Accordions Heading='Correct way of sitting for typing' text=' 1. Sit straight and remember to keep your back straight.'

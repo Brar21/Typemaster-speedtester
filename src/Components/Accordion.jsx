@@ -11,14 +11,14 @@ import { AddIcon, MinusIcon } from '@chakra-ui/icons';
 export const Accordions = (props) => {
     const { text, tex, te, t, kjh, Heading, src,kj } = props;
     return (
-        <Box>
+        <Box fontSize={10}>
             <Accordion allowMultiple>
                 <AccordionItem>
                     {({ isExpanded }) => (
                         <>
                             <h2>
                                 <AccordionButton>
-                                    <Box flex='1' textAlign='left' fontSize={30} m='1rem'>
+                                    <Box flex='1' textAlign='left' fontSize={{base:12,md:18,lg:30}} m='1rem'>
                                         {Heading}
                                     </Box>
                                     {isExpanded ? (
