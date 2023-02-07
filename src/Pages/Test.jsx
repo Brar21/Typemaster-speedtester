@@ -16,13 +16,7 @@ import {
 import { Textarea } from "@chakra-ui/react";
 
 const texts = () =>
-  `As I sit in my room late at night, staring at the computer screen,
-     I decide it would be a good idea to create this text. There isnt much meaning to it,
-    other than to get some simple practice. A lot of the texts that have been created are rather short, 
-    and don't give a good representation of actual typing speed and accuracy. 
-   They lack the length to gauge where your strengths and weaknesses are when typing`.split(
-    " "
-  );
+  `As I sit in my room late at night, staring at the computer screen,I decide it would be a good idea to create this text There isnt much meaning to it,other than to get some simple practice A lot of the texts that have been created are rather short, and don't give a good representation of actual typing speed and accuracy They lack the length to gauge where your strengths and weaknesses are when typing`.split(" ");
 //.sort(() => Math.random()>0.5? 1:-1)
 
 const Word = (props) => {
@@ -32,20 +26,19 @@ const Word = (props) => {
     {
         return <span
         style={{
-          color:"green"
-        }}
-      >
-            {text}
-      </span>
+                color: "green",
+fontWeight:900        }}
+      >{text}{" "}</span>
     }
-    if(correct!==true)
+    if(correct===false)
     {
         return <span
         style={{
-          color:"red"
+                color: "red",
+                fontWeight:900
         }}
       >
-            {text}
+            {text}{" "}
       </span>
     }
     if(active)
@@ -53,26 +46,35 @@ const Word = (props) => {
         return (
             <span
                 style={{
-                    fontWeight: active? "bold":"normal",
+                    fontWeight: "bold",
                 }}
             >
                 {text}{" "}
             </span>
         )
     };
-    return <span>{text}</span>
+    return <span>{text} </span>
 };
 
 export const TestSpeed = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [input, Setinput] = useState("");
   const randomText = useRef(texts());
-  const [activeWord, SetactiveWord] = useState(0);
+    const [activeWord,SetactiveWord]=useState(0);
+    const [correctWords,setcorrectWords]=useState([])
 
   function startType(value) {
     if (value.endsWith(" ")) {
       SetactiveWord((index) => index + 1);
-      Setinput(value + " ");
+        Setinput("");
+        setcorrectWords(el =>
+        {
+            const word=value.trim()
+            const newResult=[...el]
+            newResult[activeWord]=true
+            newResult[activeWord]=word===randomText.current[activeWord]
+            return newResult
+        })
     } else {
       Setinput(value);
     }
@@ -100,7 +102,7 @@ export const TestSpeed = () => {
                 <Word
                   text={word}
                   active={index === activeWord}
-                  correct={null}
+                  correct={correctWords[index]}
                 />
               );
             })}
