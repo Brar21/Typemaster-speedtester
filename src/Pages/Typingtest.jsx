@@ -71,32 +71,32 @@ function Test() {
             <Box w={{base:'auto',lg:'70%'}} bg='white' m='-10rem auto 0' border='2px solid red' borderRadius={15} >
                 <Image w='50%' m='auto' h={{base:'auto',lg:400}} src='https://img.freepik.com/premium-vector/gold-silver-bronze-medals-flat-style-icon-set_201904-154.jpg?w=2000' />
                 <Box display={{base:'grid',md:"grid",lg:'flex'}} w={{base:'auto',lg:'100%'}} m='auto' flexDirection='row' gap={10} >
-                    <Box w={{base:'auto',lg:'70%'}} m='auto' color='black'>
+                    <Box w={{base:'auto',lg:'70%'}} m={{base:"01 2rem",sm:'auto'}} color='black'>
                         <TableContainer >
-                            <Table variant='simple'>
+                            <Table variant='simple' textAlign={'center'}>
 
                                 <Thead w={{base:'auto',lg:'100%'}} >
-                                    <Tr display={{base:'grid',sm:'flex',md:'flex'}} flexDirection='row' m={'auto'} w={{base:'auto',md:'100%'}} justifyContent='space-between'>
-                                        <Th display='flex' gap='5px' pl="1rem"><GrCertificate fontSize={{base:'auto',lg:20}} />CERTIFICATE</Th>
-                                        <Th display='flex' gap='5px' ml='2rem'><SlSpeedometer fontSize={20} />SPEED</Th>
-                                        <Th display='flex' gap='5px'><GiOnTarget fonrSize={20} />ACCURACY</Th>
+                                    <Tr display={{base:'flex',sm:'flex',md:'flex'}} flexDirection='row' m={'auto'} w={{base:'auto%',md:'100%'}} justifyContent={{base:'center',sm:'space-between'}}>
+                                        <Th display='flex' gap='5px' pl={{base:'0rem',sm:'1rem'}}><GrCertificate fontSize={{base:'auto',lg:20}} />CERTIFICATE</Th>
+                                        <Th display='flex' gap='5px' ml={{base:'0rem',sm:'2rem'}}><SlSpeedometer fontSize={{base:'auto',lg:20}} />SPEED</Th>
+                                        <Th display='flex' gap='5px'><GiOnTarget fontSize={{base:'auto',lg:20}}  />ACCURACY</Th>
                                     </Tr>
                                 </Thead>
                                 <hr />
-                                <Tbody w={{base:'auto',lg:'100%'}} fontWeight='500' color={'black'}>
-                                    <Tr display={{base:'grid',sm:'flex',md:'flex'}} flexDirection='row' w={{base:'auto',lg:'100%'}} justifyContent='space-between' alignItems='center'>
+                                <Tbody w={{base:'auto',lg:'100%'}} fontWeight='500' color={'black'} m={'auto'} justifyContent={{base:'center',sm:'space-between'}}>
+                                    <Tr display={{base:'flex',sm:'flex',md:'flex'}} flexDirection='row' w={{base:'auto',lg:'100%'}} justifyContent='space-between' alignItems='center'>
                                         <Td display='flex' textAlign='center'><Image w={30} src='https://cdn.vectorstock.com/i/preview-1x/65/82/silver-rosette-vector-996582.jpg' /><Text pt={2}>PLATINUM</Text></Td>
                                         <Td pl='5px'>70 WPM</Td>
                                         <Td>99.5%</Td>
                                     </Tr>
                                     <hr />
-                                    <Tr display={{base:'grid',sm:'flex',md:'flex'}} flexDirection='row'w={{base:'auto',lg:'100%'}}justifyContent='space-between' color='black'>
+                                    <Tr display={{base:'flex',sm:'flex',md:'flex'}} textAlign='center' flexDirection='row'w={{base:'auto',lg:'100%'}}justifyContent='space-between' color='black'>
                                         <Td display='flex' textAlign='center' ><Image w={35} src='https://static.vecteezy.com/system/resources/previews/005/724/486/original/gold-circle-medal-with-red-ribbon-golden-round-trophy-for-first-place-of-competition-metal-award-for-leader-on-white-background-honor-victory-prize-isolated-illustration-vector.jpg' /><Text pt={3}>GOLD</Text></Td>
                                         <Td pr='5px'>50 WPM</Td>
                                         <Td>98.7%</Td>
                                     </Tr>
-                                    <hr />
-                                    <Tr display={{base:'grid',sm:'flex',md:'flex'}} flexDirection='row' w={{base:'auto',lg:'100%'}}justifyContent='space-between' color='black'>
+                                    <hr  />
+                                    <Tr display={{base:'flex',sm:'flex',md:'flex'}} flexDirection='row' w={{base:'auto',lg:'100%'}}justifyContent='space-between' color='black'>
                                         <Td display='flex' textAlign='center'><Image w={30} src='https://t3.ftcdn.net/jpg/04/87/34/18/360_F_487341885_43bjb9IUYv8c7Fhxm5kp9KgvWgZUeNMo.jpg' /><Text pt={2}>SILVER</Text></Td>
                                         <Td>40 WPM</Td>
                                         <Td>96%</Td>
