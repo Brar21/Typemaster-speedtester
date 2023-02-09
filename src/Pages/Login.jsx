@@ -5,10 +5,15 @@ import { Container, Box, Image } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { auth,provider } from "../../Authentication/config";
 import { signInWithPopup } from "firebase/auth";
+import {useState} from "react";
 function Login() {
+    const [value,setValue]=useState('')
     const handleClick=() =>
     {
-    
+    signInWithPopup(auth,provider).then((data)=>{
+        setValue(data.user.email)
+        localStorage.setItem('email',data.user.email)
+    })
 }
   return (
     <>
