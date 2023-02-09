@@ -1,11 +1,11 @@
 import { Button, HStack, Input, Heading, Text } from "@chakra-ui/react";
 import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { Container, Box, Image } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
-import { auth,provider } from "../../Authentication/config";
+import { Container, Box} from "@chakra-ui/react";
+import { Link, Navigate } from "react-router-dom";
+import { auth,provider } from "../Authentication/config";
 import { signInWithPopup } from "firebase/auth";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 function Login() {
     const [value,setValue]=useState('')
     const handleClick=() =>
@@ -14,7 +14,11 @@ function Login() {
         setValue(data.user.email)
         localStorage.setItem('email',data.user.email)
     })
-}
+    }
+    useEffect(() =>
+    {
+        setValue(localStorage.getItem('email'))
+    })
   return (
     <>
       <Container w="100%" h={"100vh"} mt="5rem">
@@ -28,9 +32,9 @@ function Login() {
           m={"auto"}
           wrap={"wrap"}
         >
-          <Button colorScheme="twitter" leftIcon={<FaFacebook />} onClick={handleClick}>
+      {value? <Navigate to={'/'} />:<Button colorScheme="twitter" leftIcon={<FaFacebook />} onClick={handleClick}>
             Log in with Facebook
-          </Button>
+          </Button>}
 
           <Button colorScheme="facebook" leftIcon={<FcGoogle />}>
             Log in with Google
