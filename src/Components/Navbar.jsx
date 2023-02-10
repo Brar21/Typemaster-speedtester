@@ -21,7 +21,10 @@ import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 export default function Simple() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const login=JSON.parse(localStorage.getItem('login'))
-
+    const handleLogut=() =>
+    {
+    localStorage.clear()
+}
   return (
     <>
       <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
@@ -68,7 +71,7 @@ export default function Simple() {
                   <MenuItem>Profile</MenuItem>
                   <MenuItem>Setting</MenuItem>
                   <MenuDivider />
-                  <MenuItem>Logout</MenuItem>
+                  <MenuItem onClick={handleLogut}>Logout</MenuItem>
                 </MenuList>
               </Menu>
             </Flex>
