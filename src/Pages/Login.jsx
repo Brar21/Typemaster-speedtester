@@ -8,10 +8,13 @@ import { signInWithPopup } from "firebase/auth";
 import {useEffect, useState} from "react";
 function Login() {
     const [value,setValue]=useState('')
+    const [login,setLogin]=useState(false)
     const handleClick=() =>
     {
     signInWithPopup(auth,provider).then((data)=>{
         setValue(data.user.email)
+        setLogin(true)
+        localStorage.setItem('login',true)
         localStorage.setItem('email',data.user.email)
     })
     }
