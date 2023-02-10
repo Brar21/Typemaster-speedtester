@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-
 import {
   Box,
   Flex,
@@ -20,7 +19,9 @@ import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
 export default function Simple() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const login=JSON.parse(localStorage.getItem('login'))
+    const login=JSON.parse(localStorage.getItem('login'))
+  const details=JSON.parse(localStorage.getItem('emaildetail'))
+    
     const handleLogut=() =>
     {
         localStorage.clear()
@@ -63,9 +64,7 @@ export default function Simple() {
                 >
                   <Avatar
                     size={"sm"}
-                    src={
-                      "https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9"
-                    }
+                    src={details.user.photoURL}
                   />
                 </MenuButton>
                 <MenuList>

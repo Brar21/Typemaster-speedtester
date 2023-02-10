@@ -13,15 +13,19 @@ function Login() {
     {
     signInWithPopup(auth,provider).then((data)=>{
         setValue(data.user.email)
+        console.log(data.user)
         setLogin(true)
         localStorage.setItem('login',true)
         localStorage.setItem('email',data.user.email)
+        localStorage.setItem('emaildetail',JSON.stringify(data))
+
     })
     }
     useEffect(() =>
     {
         setValue(localStorage.getItem('email'))
     })
+    console.log(value)
   return (
     <>
       <Container w="100%" h={"100vh"} mt="5rem">
