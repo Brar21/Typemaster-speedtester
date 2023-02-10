@@ -23,7 +23,8 @@ export default function Simple() {
   const login=JSON.parse(localStorage.getItem('login'))
     const handleLogut=() =>
     {
-    localStorage.clear()
+        localStorage.clear()
+        window.location.reload()
 }
   return (
     <>

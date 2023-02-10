@@ -35,12 +35,12 @@ function Login() {
           m={"auto"}
           wrap={"wrap"}
         >
-      {value? <Navigate to={'/'} />:<Button colorScheme="twitter" leftIcon={<FaFacebook />} onClick={handleClick}>
-            Log in with Facebook
+      {value? <Navigate to={'/'} />:<Button colorScheme="twitter" leftIcon={<FcGoogle />} onClick={handleClick}>
+            Log in with Google 
           </Button>}
 
-          <Button colorScheme="facebook" leftIcon={<FcGoogle />}>
-            Log in with Google
+          <Button colorScheme="facebook" leftIcon={<FaFacebook />}>
+            Log in with Facebook
           </Button>
         </HStack>
         <Text textAlign="start" margin="auto">
