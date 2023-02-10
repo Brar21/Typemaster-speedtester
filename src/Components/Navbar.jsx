@@ -1,22 +1,5 @@
 import { Link } from "react-router-dom";
 
-//function Navbar() {
-
-//    return <div className="nav">
-
-//        <Link to='/'><h1>Type Master</h1></Link>
-//        <Link to="/typingteacher"><strong>TYPING TEACHER</strong></Link>
-//        <Link to="/testspeed"><strong>TEST SPEED</strong></Link>
-//        <Link to="/techniques" ><strong >LERANING TOOL</strong></Link>
-//        <div className="secondpart">
-//            <Link to="/login"><strong>Login</strong></Link>
-//            <b>or</b>
-//            <Link to="/signup" className="signupButton"><strong>SIGNUP</strong></Link>
-//        </div>
-
-//    </div>
-//}
-//export default Navbar;
 import {
   Box,
   Flex,
@@ -34,27 +17,10 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
-import { useState } from "react";
-
-//const Links = ['Typing Teacher', 'Test Speed', 'Learning Tool'];
-//const links=['/','/test']
-//const NavLink = ({ children }) => (
-//  <Link
-//    px={2}
-//    py={1}
-//    rounded={'md'}
-//    _hover={{
-//      textDecoration: 'none',
-//      bg: useColorModeValue('gray.200', 'gray.700'),
-//    }}
-//    to={links}>
-//    {children}
-//  </Link>
-//);
 
 export default function Simple() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [login] = useState(true);
+  const login=JSON.parse(localStorage.getItem('login'))
 
   return (
     <>
@@ -81,7 +47,7 @@ export default function Simple() {
               <Link to={"/techniques"}>Learning Tool</Link>
             </HStack>
           </HStack>
-          {!login ? (
+          {login===true ? (
             <Flex alignItems={"center"}>
               <Menu>
                 <MenuButton
@@ -128,4 +94,3 @@ export default function Simple() {
     </>
   );
 }
-//No we can't do like simple or Vanila javascript so what we do?
