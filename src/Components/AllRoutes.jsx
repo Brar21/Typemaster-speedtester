@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "../Pages/Home";
 import Login from "../Pages/Login";
+import Profile from "../Pages/Profile";
 import Signup from "../Pages/Signup";
 import { TestSpeed } from "../Pages/Test";
 import TypingTeacher from "../Pages/TypingTeacher";
@@ -20,6 +21,7 @@ function AllRoutes() {
                 <Route path="/techniques" element={<TypingTech />}></Route>
                 <Route path="/login" element={<Login />}></Route>
                 <Route path="/signup" element={<Signup />}></Route>
+                <Route path='/profile' element={<Profile/>} />
             </Routes>
         </div>
     )
