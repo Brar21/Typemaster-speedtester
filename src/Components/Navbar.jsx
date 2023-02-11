@@ -70,7 +70,6 @@ export default function Simple() {
                 </MenuButton>
                 <MenuList>
                  <Link to='/profile'><MenuItem>Profile</MenuItem></Link> 
-                  <MenuItem>Setting</MenuItem>
                   <MenuDivider />
                   <MenuItem onClick={handleLogut}>Logout</MenuItem>
                 </MenuList>
