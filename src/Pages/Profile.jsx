@@ -75,6 +75,7 @@ export default function Profile()
                         type="text"
                         value={name}
                         onChange={handleChange}
+                        disabled
             />
           </FormControl>
           <FormControl id="email" isRequired>
@@ -85,6 +86,7 @@ export default function Profile()
                         type="email"
                         value={email}
                         onChange={handleChange}
+                        disabled
             />
           </FormControl>
           <FormControl id="password" isRequired>
