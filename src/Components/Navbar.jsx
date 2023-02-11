@@ -26,7 +26,8 @@ export default function Simple() {
     {
         localStorage.clear()
         window.location.reload()
-}
+    }
+  
   return (
     <>
       <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
@@ -68,7 +69,7 @@ export default function Simple() {
                   />
                 </MenuButton>
                 <MenuList>
-                  <MenuItem>Profile</MenuItem>
+                 <Link to='/profile'><MenuItem>Profile</MenuItem></Link> 
                   <MenuItem>Setting</MenuItem>
                   <MenuDivider />
                   <MenuItem onClick={handleLogut}>Logout</MenuItem>
