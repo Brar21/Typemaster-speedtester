@@ -13,8 +13,21 @@ import {
     Center,
   } from '@chakra-ui/react';
   import { SmallCloseIcon } from '@chakra-ui/icons';
+import {useState} from 'react';
   
-  export default function Profile(){
+export default function Profile()
+{
+  const data=JSON.parse(localStorage.getItem('emaildetail'))
+    const [name,setName]=useState(data.user.displayName)
+    const [email,setEmail]=useState(data.user.email)
+    const [password,setPassword]=useState("")
+    
+    const handleChange=(e) =>
+    {
+        setEmail(data.user.email)
+        setName(data.user.displayName)
+        setPassword(e.value)
+    }
     return (
       <Flex
         minH={'100vh'}
@@ -37,7 +50,7 @@ import {
             <FormLabel>User Icon</FormLabel>
             <Stack direction={['column', 'row']} spacing={6}>
               <Center>
-                <Avatar size="xl" src="https://bit.ly/sage-adebayo">
+                <Avatar size="xl" src={data.user.photoURL}>
                   <AvatarBadge
                     as={IconButton}
                     size="sm"
@@ -59,7 +72,9 @@ import {
             <Input
               placeholder="UserName"
               _placeholder={{ color: 'gray.500' }}
-              type="text"
+                        type="text"
+                        value={name}
+                        onChange={handleChange}
             />
           </FormControl>
           <FormControl id="email" isRequired>
@@ -67,7 +82,9 @@ import {
             <Input
               placeholder="your-email@example.com"
               _placeholder={{ color: 'gray.500' }}
-              type="email"
+                        type="email"
+                        value={email}
+                        onChange={handleChange}
             />
           </FormControl>
           <FormControl id="password" isRequired>
@@ -75,7 +92,9 @@ import {
             <Input
               placeholder="password"
               _placeholder={{ color: 'gray.500' }}
-              type="password"
+                        type="password"
+                        value={password}
+                        onChange={handleChange}
             />
           </FormControl>
           <Stack spacing={6} direction={['column', 'row']}>
