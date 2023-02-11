@@ -12,7 +12,7 @@ import {
     IconButton,
     Center,
   } from '@chakra-ui/react';
-  import { SmallCloseIcon } from '@chakra-ui/icons';
+  import { CheckIcon } from '@chakra-ui/icons';
 import {useState} from 'react';
   
 export default function Profile()
@@ -24,8 +24,8 @@ export default function Profile()
     
     const handleChange=(e) =>
     {
-        setEmail(data.user.email)
-        setName(data.user.displayName)
+        setEmail(email)
+        setName(name)
         setPassword(e.value)
     }
     return (
@@ -53,12 +53,12 @@ export default function Profile()
                 <Avatar size="xl" src={data.user.photoURL}>
                   <AvatarBadge
                     as={IconButton}
-                    size="sm"
+                    size="xs"
                     rounded="full"
                     top="-10px"
-                    colorScheme="red"
+                    colorScheme="green"
                     aria-label="remove Image"
-                    icon={<SmallCloseIcon />}
+                    icon={<CheckIcon />}
                   />
                 </Avatar>
               </Center>
