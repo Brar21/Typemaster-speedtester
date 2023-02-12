@@ -38,7 +38,7 @@ function Login()
     
       const handleSubmit = (e) => {
         e.preventDefault();
-        if (password !== confirmpassword) {
+        if (password !== registration.password) {
           return toast({
             title: "Nope",
             position: "top-right",
@@ -89,8 +89,8 @@ function Login()
         </Text>
               <Box w="100%">
                   <form onSubmit={handleSubmit}></form>
-          <Input placeholder="Email Address" type="email" name="email" value={email} onChange={hanldeChange} margin="1rem 0" />
-          <Input placeholder="Enter Password" type="password" name="password" value={password} onChange={hanldeChange} margin="1rem 0" />
+          <Input placeholder="Email Address" type="email" name="email" value={email} onChange={handleChange} margin="1rem 0" />
+          <Input placeholder="Enter Password" type="password" name="password" value={password} onChange={handleChange} margin="1rem 0" />
           <Box marginBottom="1rem" marginTop="1rem">
             <Button colorScheme="blue" onClick={handleSubmit}>LOG IN</Button> <strong>or</strong>{" "}
             <Link to="/signup">Sign Up now</Link>
