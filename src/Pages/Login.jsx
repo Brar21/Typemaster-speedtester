@@ -6,7 +6,9 @@ import { Link, Navigate } from "react-router-dom";
 import { auth,provider } from "../Authentication/config";
 import { signInWithPopup } from "firebase/auth";
 import {useEffect, useState} from "react";
-function Login() {
+function Login()
+{
+  const toast = useToast();
     const [value,setValue]=useState('')
     const [login,setLogin]=useState(false)
     const [state,setState]=useState({email: "",password: ""})
