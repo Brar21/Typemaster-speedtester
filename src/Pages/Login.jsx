@@ -5,7 +5,8 @@ import { Container, Box} from "@chakra-ui/react";
 import { Link, Navigate } from "react-router-dom";
 import { auth,provider } from "../Authentication/config";
 import { signInWithPopup } from "firebase/auth";
-import {useEffect, useState} from "react";
+import {useEffect,useState} from "react";
+import { useToast } from "@chakra-ui/react";
 function Login()
 {
   const toast = useToast();
