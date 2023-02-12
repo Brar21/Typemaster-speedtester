@@ -13,6 +13,7 @@ function Login()
     const [value,setValue]=useState('')
     const [login,setLogin]=useState(false)
     const [state,setState]=useState({email: "",password: ""})
+    const [input,setInput]=useState(false)
     const {email,password}=state
     const registration=JSON.parse(localStorage.getItem('register'))
     const handleClick=() =>
@@ -57,7 +58,8 @@ function Login()
                 duration: 4000,
                 isClosable: true,
               });
-          localStorage.setItem("register", JSON.stringify(state));
+            localStorage.setItem("logindone",JSON.stringify(state));
+            setInput(true)
         }
         // console.log(state);
         setState({ email: "", password: "", name: "", confirmpassword: "" });
@@ -88,13 +90,14 @@ function Login()
           or you can login with your email:
         </Text>
               <Box w="100%">
-                  <form onSubmit={handleSubmit}></form>
+                { input ===true? <Navigate to={'/'} />:<form onSubmit={handleSubmit}>
           <Input placeholder="Email Address" type="email" name="email" value={email} onChange={handleChange} margin="1rem 0" />
           <Input placeholder="Enter Password" type="password" name="password" value={password} onChange={handleChange} margin="1rem 0" />
           <Box marginBottom="1rem" marginTop="1rem">
             <Button colorScheme="blue" onClick={handleSubmit}>LOG IN</Button> <strong>or</strong>{" "}
             <Link to="/signup">Sign Up now</Link>
-          </Box>
+                      </Box>
+                      </form>}
           <Link to="/resetpassword">Forget your password?</Link>
         </Box>
       </Container>
