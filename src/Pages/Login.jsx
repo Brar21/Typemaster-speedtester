@@ -28,6 +28,38 @@ function Login() {
         setValue(localStorage.getItem('email'))
     })
     console.log(value)
+    const handleChange = (e) => {
+        let { name, value } = e.target;
+        setState({ ...state, [name]: value });
+      };
+    
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        if (password !== confirmpassword) {
+          return toast({
+            title: "Nope",
+            position: "top-right",
+            description: "password is not matching",
+            status: "error",
+            duration: 9000,
+            isClosable: true,
+          });
+          //alert('password wrong')
+        } else {
+            toast({
+                title: "Registration",
+                position: "top-right",
+                description: "Registration Successfully Done",
+                status: "success",
+                duration: 4000,
+                isClosable: true,
+              });
+          localStorage.setItem("register", JSON.stringify(state));
+        }
+        // console.log(state);
+        setState({ email: "", password: "", name: "", confirmpassword: "" });
+      };
+    
   return (
     <>
       <Container w="100%" h={"100vh"} mt="5rem">
