@@ -7,7 +7,7 @@ function Signup() {
     return <>
             <Container w='100%' h={'100vh'}>
             <Heading textAlign='start' margin='1rem 0'>Create a free Account</Heading>
-            <Text textAlign='start' margin='1rem 0'>Already have<Link to='/login'> Login now</Link></Text>
+            <Text textAlign='start' margin='1rem 0'>Already have<Link to='/login'><strong color='blue'> Login now</strong></Link></Text>
                
                 <Text textAlign='start' margin='1rem 0'>or you can Sign Up with your email:</Text>
                 <Box w='100%' >
@@ -15,6 +15,8 @@ function Signup() {
 
                     <Input placeholder='Email Address' type='email' margin='1rem 0' />
                 <Input placeholder='Enter Password' type='password' margin='1rem 0' />
+                <Input placeholder='Confirm Password' type='password' margin='1rem 0' />
+
                 <Stack spacing={5} direction='column'>
                     <Checkbox w='18rem' colorScheme='blue' defaultChecked>
                         I have read and agree to Typetest's terms of use and privacy policy
