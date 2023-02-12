@@ -12,11 +12,11 @@ const [state,setState]=useState({name:"",email:"",password:"",confirmpassword:""
                
                 <Text textAlign='start' margin='1rem 0'>or you can Sign Up with your email:</Text>
                 <Box w='100%' >
-                <Input placeholder='Your Name' name='' value={} onChange={handleChange} type='text' margin='1rem 0' />
+                <Input placeholder='Your Name' name='' value={state} onChange={handleChange} type='text' margin='1rem 0' />
 
-                    <Input placeholder='Email Address' name='' value={} onChange={handleChange} type='email' margin='1rem 0' />
-                <Input placeholder='Enter Password' name='' value={} onChange={handleChange} type='password' margin='1rem 0' />
-                <Input placeholder='Confirm Password' name='' value={} onChange={handleChange} type='password' margin='1rem 0' />
+                    <Input placeholder='Email Address' name='' value={state} onChange={handleChange} type='email' margin='1rem 0' />
+                <Input placeholder='Enter Password' name='' value={state} onChange={handleChange} type='password' margin='1rem 0' />
+                <Input placeholder='Confirm Password' name='' value={state} onChange={handleChange} type='password' margin='1rem 0' />
 
                 <Stack spacing={5} direction='column'>
                     <Checkbox w='18rem' colorScheme='blue' defaultChecked>
