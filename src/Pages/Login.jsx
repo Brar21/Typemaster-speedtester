@@ -9,7 +9,9 @@ import {useEffect, useState} from "react";
 function Login() {
     const [value,setValue]=useState('')
     const [login,setLogin]=useState(false)
-    const registration=JSON.parse(localStorage.getItem(''))
+    const [state,setState]=useState({email: "",password: ""})
+    const {email,password}=state
+    const registration=JSON.parse(localStorage.getItem('register'))
     const handleClick=() =>
     {
     signInWithPopup(auth,provider).then((data)=>{
@@ -50,11 +52,12 @@ function Login() {
         <Text textAlign="start" margin="auto">
           or you can login with your email:
         </Text>
-        <Box w="100%">
-          <Input placeholder="Email Address" type="email" margin="1rem 0" />
-          <Input placeholder="Enter Password" type="password" margin="1rem 0" />
+              <Box w="100%">
+                  <form onSubmit={handleSubmit}></form>
+          <Input placeholder="Email Address" type="email" name="email" value={email} onChange={hanldeChange} margin="1rem 0" />
+          <Input placeholder="Enter Password" type="password" name="password" value={password} onChange={hanldeChange} margin="1rem 0" />
           <Box marginBottom="1rem" marginTop="1rem">
-            <Button colorScheme="blue">LOG IN</Button> <strong>or</strong>{" "}
+            <Button colorScheme="blue" onClick={handleSubmit}>LOG IN</Button> <strong>or</strong>{" "}
             <Link to="/signup">Sign Up now</Link>
           </Box>
           <Link to="/resetpassword">Forget your password?</Link>
