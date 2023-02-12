@@ -9,6 +9,7 @@ import {useEffect, useState} from "react";
 function Login() {
     const [value,setValue]=useState('')
     const [login,setLogin]=useState(false)
+    const registration=JSON.parse(localStorage.getItem(''))
     const handleClick=() =>
     {
     signInWithPopup(auth,provider).then((data)=>{
@@ -18,7 +19,6 @@ function Login() {
         localStorage.setItem('login',true)
         localStorage.setItem('email',data.user.email)
         localStorage.setItem('emaildetail',JSON.stringify(data))
-
     })
     }
     useEffect(() =>
