@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 import { useToast } from "@chakra-ui/react";
 
 function Signup() {
-  const toast = useToast();
+    const toast=useToast();
+    const registration=JSON.parse(localStorage.getItem('register'))
   const [state, setState] = useState({
     name: "",
     email: "",
@@ -26,11 +27,21 @@ function Signup() {
         position: "top-right",
         description: "password is not matching",
         status: "error",
-        duration: 9000,
+        duration: 5000,
         isClosable: true,
       });
       //alert('password wrong')
-    } else {
+    }   if (email === registration.email) {
+        return toast({
+          title: "Already Resgisterd",
+          position: "top-right",
+          description: "Email is already registerd",
+          status: "error",
+          duration: 5000,
+          isClosable: true,
+        });
+        //alert('password wrong')
+      }  else {
         toast({
             title: "Registration",
             position: "top-right",
