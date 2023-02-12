@@ -49,7 +49,20 @@ function Login()
             isClosable: true,
           });
           //alert('password wrong')
-        } else {
+        }
+        if (email !== registration.email) {
+            return toast({
+              title: "Not Registerd",
+              position: "top-right",
+              description: "No such Email is registerd",
+              status: "error",
+              duration: 9000,
+              isClosable: true,
+            });
+            //alert('password wrong')
+          }
+        else
+        {
             toast({
                 title: "Registration",
                 position: "top-right",
@@ -62,7 +75,7 @@ function Login()
             setInput(true)
         }
         // console.log(state);
-        setState({ email: "", password: "", name: "", confirmpassword: "" });
+        setState({ email: "", password: ""});
       };
     
   return (
