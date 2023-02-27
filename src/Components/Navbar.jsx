@@ -50,9 +50,9 @@ export default function Simple() {
               spacing={4}
                           display={{base: "none",md: "flex"}}
             fontWeight={700}fontSize={20}>
-              <Link to={"/typingteacher"}><Text _hover={{bg:"",color:"white"}}>Typing Teacher</Text></Link>
-              <Link to={"/testspeed"}><Text _hover={{bg:"",color:"white"}}>Test Speed</Text></Link>
-              <Link to={"/techniques"}><Text _hover={{bg:"",color:"white"}}>Learning Tool</Text></Link>
+              <Link to={"/typingteacher"}><Text _hover={{bg:"#577b87",color:"white" ,p:2,borderRadius:10}}>Typing Teacher</Text></Link>
+              <Link to={"/testspeed"}><Text _hover={{bg:"#577b87",color:"white",p:2,borderRadius:10}}>Test Speed</Text></Link>
+              <Link to={"/techniques"}><Text _hover={{bg:"#577b87",color:"white",p:2,borderRadius:10}}>Learning Tool</Text></Link>
             </HStack>
           </HStack>
           {login===true ? (
@@ -79,7 +79,7 @@ export default function Simple() {
             </Flex>
           ) : (
             <Box display={"flex"} w={{base:"auto"}} gap={6} textAlign={"center"}>
-              <Link to={'/login'}>Login</Link>
+              <Link to={'/login'}><Text _hover={{bg:"#577b87",color:"white",p:2,borderRadius:10}}>Login</Text></Link>
             </Box>
           )}
         </Flex>
