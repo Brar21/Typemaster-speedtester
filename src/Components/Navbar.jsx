@@ -15,8 +15,19 @@ import {
   useColorModeValue,
   Stack,Image,Text
 } from "@chakra-ui/react";
+import NavLink from './NavLink';
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import logo from "./logo.png"
+
+const Links = [
+    { name: "Typing Teacher", id: "/typingteacher" },
+    { name: "Test Speed", id: "/testspeed" },
+    { name: "Learning Tool", id: "/techniques" },
+    { name: "Login", id: "/login" },
+    { name: "SignUp", id: "/signup" }
+];
+
+
 export default function Simple() {
   const { isOpen, onOpen, onClose } = useDisclosure();
     const login=JSON.parse(localStorage.getItem('login'))
@@ -86,12 +97,17 @@ export default function Simple() {
 
         {isOpen ? (
           <Box pb={4} display={{ md: "none" }}>
-            <Stack as={"nav"} spacing={4} onClick={()=>onClose} fontWeight={700}fontSize={20}>
-              <Link to={"/typingteacher"}>Typing Teacher</Link>
-              <Link to={"/testspeed"}>Test Speed</Link>
-              <Link to={"/techniques"}>Learning Tool</Link>
-              <Link to={"/login"}>Login</Link>
-              <Link to={"/signup"}>SignUp</Link>
+                      <Stack as={"nav"} spacing={4}  fontWeight={700} fontSize={20}>
+                      {Links.map((link, i) => (
+                                <NavLink
+                                    key={i}
+                                    to={link.id}
+                                    name={link.name}
+                                    w="xm"
+                                    textalign="center"
+                                    onClick={() => onClose()}
+                                />
+                            ))}
             </Stack>
           </Box>
         ) : null}
