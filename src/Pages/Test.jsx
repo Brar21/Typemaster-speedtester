@@ -165,7 +165,7 @@ export const TestSpeed = () => {
         p="5rem 0"
         gap={12}
       >
-        <Box bg="white" h="45vh" borderRadius={10} w="80%" m="auto">
+        <Box bg="white" h="48vh" borderRadius={10} w="80%" m="auto">
           <Text p={5} fontSize='25px' color="black">
             {randomText.current.map((word, index) => {
               return (
