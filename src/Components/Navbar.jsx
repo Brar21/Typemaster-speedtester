@@ -79,14 +79,14 @@ export default function Simple() {
             </Flex>
           ) : (
             <Box display={"flex"} w={{base:"auto"}} gap={6} textAlign={"center"}>
-              <Link to={'/login'}><Text _hover={{bg:"#577b87",color:"white",p:2,borderRadius:10}}>Login</Text></Link>
+              <Link to={'/login'}><Text _hover={{bg:"#577b87",color:"white",p:2,borderRadius:10}} fontWeight={700}fontSize={20}>Login</Text></Link>
             </Box>
           )}
         </Flex>
 
         {isOpen ? (
           <Box pb={4} display={{ md: "none" }}>
-            <Stack as={"nav"} spacing={4} onClick={()=>onClose} fontWeight={800}>
+            <Stack as={"nav"} spacing={4} onClick={()=>onClose} fontWeight={700}fontSize={20}>
               <Link to={"/typingteacher"}>Typing Teacher</Link>
               <Link to={"/testspeed"}>Test Speed</Link>
               <Link to={"/techniques"}>Learning Tool</Link>
