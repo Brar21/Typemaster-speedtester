@@ -13,7 +13,7 @@ import {
   MenuDivider,
   useDisclosure,
   useColorModeValue,
-  Stack,Image
+  Stack,Image,Text
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import logo from "./logo.png"
@@ -48,11 +48,11 @@ export default function Simple() {
             <HStack
               as={"nav"}
               spacing={4}
-              display={{ base: "none", md: "flex" }}
-            >
-              <Link to={"/typingteacher"}>Typing Teacher</Link>
-              <Link to={"/testspeed"}>Test Speed</Link>
-              <Link to={"/techniques"}>Learning Tool</Link>
+                          display={{base: "none",md: "flex"}}
+            fontWeight={700}fontSize={20}>
+              <Link to={"/typingteacher"}><Text _hover={{bg:"",color:"white"}}>Typing Teacher</Text></Link>
+              <Link to={"/testspeed"}><Text _hover={{bg:"",color:"white"}}>Test Speed</Text></Link>
+              <Link to={"/techniques"}><Text _hover={{bg:"",color:"white"}}>Learning Tool</Text></Link>
             </HStack>
           </HStack>
           {login===true ? (
@@ -86,7 +86,7 @@ export default function Simple() {
 
         {isOpen ? (
           <Box pb={4} display={{ md: "none" }}>
-            <Stack as={"nav"} spacing={4} onClick={()=>onClose}>
+            <Stack as={"nav"} spacing={4} onClick={()=>onClose} fontWeight={800}>
               <Link to={"/typingteacher"}>Typing Teacher</Link>
               <Link to={"/testspeed"}>Test Speed</Link>
               <Link to={"/techniques"}>Learning Tool</Link>
