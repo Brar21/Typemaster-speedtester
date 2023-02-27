@@ -153,7 +153,7 @@ export const TestSpeed = () => {
         flexdirection="column"
         m="auto"
                  >
-              <Heading color={'white'}>For giving you need Laptop or Personal desktop. So, make sure you login on one these things.</Heading>
+              <Heading color={'white'}>For taking a typing speed test you need Laptop or Personal desktop. So, make sure you login on one these things.</Heading>
               <Image src={pc} alt={pc} />
           </Box>
       <Box
