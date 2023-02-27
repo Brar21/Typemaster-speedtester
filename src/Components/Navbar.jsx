@@ -13,10 +13,10 @@ import {
   MenuDivider,
   useDisclosure,
   useColorModeValue,
-  Stack,
+  Stack,Image
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
-
+import logo from "./logo.png"
 export default function Simple() {
   const { isOpen, onOpen, onClose } = useDisclosure();
     const login=JSON.parse(localStorage.getItem('login'))
@@ -41,7 +41,9 @@ export default function Simple() {
           />
           <HStack spacing={8} alignItems={"center"}>
             <Box>
-              <Link to={"/"}>TypeTest</Link>
+                          <Link to={"/"}>
+                              <Image w={40} src={logo} alt={logo} />
+              </Link>
             </Box>
             <HStack
               as={"nav"}
