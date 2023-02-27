@@ -178,7 +178,7 @@ export const TestSpeed = () => {
             })}
           </Text>
           <Textarea
-            placeholder={"Start Typing....sds "}
+            placeholder={"Start Typing...."}
             color="black"
             value={input}
             onChange={(e) => startType(e.target.value)}

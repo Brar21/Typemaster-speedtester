@@ -49,7 +49,7 @@ export default function Simple() {
               as={"nav"}
               spacing={4}
                           display={{base: "none",md: "flex"}}
-            fontWeight={700}fontSize={20}>
+            fontWeight={700}fontSize={20} color='#577b87'>
               <Link to={"/typingteacher"}><Text _hover={{bg:"#577b87",color:"white" ,p:2,borderRadius:10}}>Typing Teacher</Text></Link>
               <Link to={"/testspeed"}><Text _hover={{bg:"#577b87",color:"white",p:2,borderRadius:10}}>Test Speed</Text></Link>
               <Link to={"/techniques"}><Text _hover={{bg:"#577b87",color:"white",p:2,borderRadius:10}}>Learning Tool</Text></Link>
@@ -78,7 +78,7 @@ export default function Simple() {
               </Menu>
             </Flex>
           ) : (
-            <Box display={"flex"} w={{base:"auto"}} gap={6} textAlign={"center"}>
+            <Box display={"flex"} w={{base:"auto"}} gap={6} textAlign={"center"} color='#577b87'>
               <Link to={'/login'}><Text _hover={{bg:"#577b87",color:"white",p:2,borderRadius:10}} fontWeight={700}fontSize={20}>Login</Text></Link>
             </Box>
           )}
