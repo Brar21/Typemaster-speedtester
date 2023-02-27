@@ -10,10 +10,10 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogContent,
-  AlertDialogOverlay,
+  AlertDialogOverlay,Image,Heading
 } from "@chakra-ui/react";
 import { Textarea } from "@chakra-ui/react";
-
+import pc from "./pc.svg"
 const texts = () =>
   `As I sit in my room late at night, staring at the computer screen, I decide it would be a good idea to create this text. There isn't much meaning to it, other than to get some simple practice. A lot of the texts that have been created are rather short, and don't give a good representation of actual typing speed and accuracy. They lack the length to gauge where your strengths and weaknesses are when typing.`
     .split(" ")
@@ -147,7 +147,15 @@ export const TestSpeed = () => {
     }
   }
   return (
-    <Box w="100%" h={"100vh"} bg="#577b87">
+      <Box w="100%" h={"80vh"} bg="#577b87">
+          <Box   w="70%"
+        display={{ base: "grid", lg: "none" }}
+        flexdirection="column"
+        m="auto"
+                 >
+              <Heading color={'white'}>For giving you need Laptop or Personal desktop. So, make sure you login on one these things.</Heading>
+              <Image src={pc} alt={pc} />
+          </Box>
       <Box
         w="70%"
         display={{ base: "none", lg: "flex" }}
